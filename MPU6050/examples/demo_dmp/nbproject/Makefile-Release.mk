@@ -67,17 +67,17 @@ LDLIBSOPTIONS=
 ${OBJECTDIR}/_ext/64e570a/I2Cdev.o: ../../../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/64e570a
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DWIRING_PI -I../.. -I../../../I2Cdev -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/64e570a/I2Cdev.o ../../../I2Cdev/I2Cdev.cpp
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/64e570a/I2Cdev.o ../../../I2Cdev/I2Cdev.cpp
 
 ${OBJECTDIR}/_ext/29dd86f/MPU6050.o: ../../MPU6050.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/29dd86f
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DWIRING_PI -I../.. -I../../../I2Cdev -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/29dd86f/MPU6050.o ../../MPU6050.cpp
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/29dd86f/MPU6050.o ../../MPU6050.cpp
 
 ${OBJECTDIR}/demo_dmp.o: demo_dmp.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DWIRING_PI -I../.. -I../../../I2Cdev -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/demo_dmp.o demo_dmp.cpp
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/demo_dmp.o demo_dmp.cpp
 
 # Subprojects
 .build-subprojects:

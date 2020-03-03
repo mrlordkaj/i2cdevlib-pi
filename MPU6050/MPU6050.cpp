@@ -38,17 +38,10 @@ THE SOFTWARE.
 #include "MPU6050.h"
 
 #ifdef WIRING_PI
-
-#include <algorithm>
-#include <cstring>
-#include <stdio.h>
-
-#ifndef pgm_read_byte
 #define pgm_read_byte(x) (*(x))
-#endif
-
-using namespace std;
-
+#define F(x) x
+#include "AbstractArduino.h"
+AbstractSerial Serial;
 #endif
 
 /** Specific address constructor.
@@ -3308,11 +3301,7 @@ void MPU6050::PID(uint8_t ReadAddress, float kP,float kI, uint8_t Loops){
 	float Error, PTerm, ITerm[3];
 	int16_t eSample;
 	uint32_t eSum ;
-#ifdef WIRING_PI
-        printf(">");
-#else
 	Serial.write('>');
-#endif
 	for (int i = 0; i < 3; i++) {
 		I2Cdev::readWords(devAddr, SaveAddress + (i * shift), 1, (uint16_t *)&Data); // reads 1 or more 16 bit integers (Word)
 		Reading = Data;
@@ -3343,21 +3332,13 @@ void MPU6050::PID(uint8_t ReadAddress, float kP,float kI, uint8_t Loops){
 			}
 			if((c == 99) && eSum > 1000){						// Error is still to great to continue 
 				c = 0;
-#ifdef WIRING_PI
-                                printf("*");
-#else
 				Serial.write('*');
-#endif
 			}
 			if((eSum * ((ReadAddress == 0x3B)?.05: 1)) < 5) eSample++;	// Successfully found offsets prepare to  advance
 			if((eSum < 100) && (c > 10) && (eSample >= 10)) break;		// Advance to next Loop
 			delay(1);
 		}
-#ifdef WIRING_PI
-                printf(".");
-#else
 		Serial.write('.');
-#endif
 		kP *= .75;
 		kI *= .75;
 		for (int i = 0; i < 3; i++){
@@ -3372,25 +3353,13 @@ void MPU6050::PID(uint8_t ReadAddress, float kP,float kI, uint8_t Loops){
 	resetDMP();
 }
 
-#ifdef WIRING_PI
-void printfloatx(const char* Name, int16_t Variable, int Spaces, int Precision, const char* EndTxt) {
-    printf(Name);
-    printf(" %.5f", (float)Variable);
-    printf(EndTxt);
-};
-#else
 #define printfloatx(Name,Variable,Spaces,Precision,EndTxt) { Serial.print(F(Name)); {char S[(Spaces + Precision + 3)];Serial.print(F(" ")); Serial.print(dtostrf((float)Variable,Spaces,Precision ,S));}Serial.print(F(EndTxt)); }//Name,Variable,Spaces,Precision,EndTxt
-#endif
 void MPU6050::PrintActiveOffsets() {
 	uint8_t AOffsetRegister = (getDeviceID() < 0x38 )? MPU6050_RA_XA_OFFS_H:0x77;
 	int16_t Data[3];
-#ifdef WIRING_PI
-        printf("\n//           X Accel  Y Accel  Z Accel   X Gyro   Y Gyro   Z Gyro\n//OFFSETS   ");
-#else
         //Serial.print(F("Offset Register 0x"));
 	//Serial.print(AOffsetRegister>>4,HEX);Serial.print(AOffsetRegister&0x0F,HEX);
         Serial.print(F("\n//           X Accel  Y Accel  Z Accel   X Gyro   Y Gyro   Z Gyro\n//OFFSETS   "));
-#endif
 	if(AOffsetRegister == 0x06)	I2Cdev::readWords(devAddr, AOffsetRegister, 3, (uint16_t *)Data);
 	else {
 		I2Cdev::readWords(devAddr, AOffsetRegister, 1, (uint16_t *)Data);

@@ -49,6 +49,7 @@
             <pElem>../../../I2Cdev</pElem>
           </incDir>
           <preprocessorList>
+            <Elem>DMP_FIFO_RATE=9</Elem>
             <Elem>WIRING_PI</Elem>
           </preprocessorList>
         </ccTool>
