@@ -332,6 +332,7 @@ void setup() {
 	// Calibration Time: generate offsets and calibrate our MPU6050
         mpu.CalibrateAccel(6);
         mpu.CalibrateGyro(6);
+        mpu.PrintActiveOffsets();
         // turn on the DMP, now that it's ready
         printf("Enabling DMP...\n");
         mpu.setDMPEnabled(true);

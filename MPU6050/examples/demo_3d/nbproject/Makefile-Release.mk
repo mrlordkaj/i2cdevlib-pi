@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/64e570a/AbstractArduino.o \
 	${OBJECTDIR}/_ext/64e570a/I2Cdev.o \
 	${OBJECTDIR}/_ext/29dd86f/MPU6050.o \
 	${OBJECTDIR}/demo_3d.o \
@@ -65,25 +66,30 @@ LDLIBSOPTIONS=`pkg-config --libs gtkmm-3.0`
 	${MKDIR} -p /home/pi
 	${LINK.cc} -o /home/pi/demo_3d ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi
 
+${OBJECTDIR}/_ext/64e570a/AbstractArduino.o: ../../../I2Cdev/AbstractArduino.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/64e570a
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/64e570a/AbstractArduino.o ../../../I2Cdev/AbstractArduino.cpp
+
 ${OBJECTDIR}/_ext/64e570a/I2Cdev.o: ../../../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/64e570a
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/64e570a/I2Cdev.o ../../../I2Cdev/I2Cdev.cpp
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/64e570a/I2Cdev.o ../../../I2Cdev/I2Cdev.cpp
 
 ${OBJECTDIR}/_ext/29dd86f/MPU6050.o: ../../MPU6050.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/29dd86f
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/29dd86f/MPU6050.o ../../MPU6050.cpp
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/29dd86f/MPU6050.o ../../MPU6050.cpp
 
 ${OBJECTDIR}/demo_3d.o: demo_3d.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/demo_3d.o demo_3d.cpp
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/demo_3d.o demo_3d.cpp
 
 ${OBJECTDIR}/main_3d.o: main_3d.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_3d.o main_3d.cpp
+	$(COMPILE.cc) -O2 -DDMP_FIFO_RATE=9 -DWIRING_PI -I../.. -I../../../I2Cdev `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_3d.o main_3d.cpp
 
 # Subprojects
 .build-subprojects:

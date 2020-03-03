@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>../../../I2Cdev/AbstractArduino.h</itemPath>
       <itemPath>../../../I2Cdev/I2Cdev.h</itemPath>
       <itemPath>../../MPU6050.h</itemPath>
       <itemPath>../../MPU6050_6Axis_MotionApps20.h</itemPath>
@@ -17,6 +18,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>../../../I2Cdev/AbstractArduino.cpp</itemPath>
       <itemPath>../../../I2Cdev/I2Cdev.cpp</itemPath>
       <itemPath>../../MPU6050.cpp</itemPath>
       <itemPath>demo_3d.cpp</itemPath>
@@ -53,6 +55,7 @@
             <pElem>../../../I2Cdev</pElem>
           </incDir>
           <preprocessorList>
+            <Elem>DMP_FIFO_RATE=9</Elem>
             <Elem>WIRING_PI</Elem>
           </preprocessorList>
         </ccTool>
@@ -70,6 +73,13 @@
           <commandLine>-lwiringPi</commandLine>
         </linkerTool>
       </compileType>
+      <item path="../../../I2Cdev/AbstractArduino.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../I2Cdev/AbstractArduino.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../../../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../../../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
