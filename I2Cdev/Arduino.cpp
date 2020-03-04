@@ -15,12 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "AbstractArduino.h"
-#include <stdio.h>
+#include "Arduino.h"
 
-long min(long a, long b) {
-    return std::min(a, b);
-}
+_Serial Serial;
+
+// ================================================================
+// ===            ARDUINO CORE FUNCTIONS SIMULATION             ===
+// ================================================================
 
 long map(long x, long in_min, long in_max, long out_min, long out_max) {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -33,16 +34,19 @@ char *dtostrf(double val, signed char width, unsigned char prec, char *sout) {
     return sout;
 }
 
-void AbstractSerial::write(char c) {
-    const char str[] = { c };
-    printf(str);
+// ================================================================
+// ===                ARDUINO SERIAL SIMULATION                 ===
+// ================================================================
+
+void _Serial::begin(int baudrate) {
+    // TODO
 }
 
-void AbstractSerial::print(const char* val) {
-    printf(val);
+void _Serial::write(char val) {
+    std::cout << val;
 }
 
-void AbstractSerial::print(long val, int format) {
+void _Serial::print(long val, int format) {
     switch (format) {
         case HEX:
             printf("%X", val);
@@ -59,12 +63,7 @@ void AbstractSerial::print(long val, int format) {
     }
 }
 
-void AbstractSerial::println(const char* val) {
-    printf(val);
-    printf("\n");
-}
-
-void AbstractSerial::println(long val, int format) {
+void _Serial::println(long val, int format) {
     print(val, format);
-    printf("\n");
+    printf("\r\n");
 }

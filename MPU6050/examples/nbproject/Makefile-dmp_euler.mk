@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/80f8d31b/Arduino.o \
 	${OBJECTDIR}/_ext/80f8d31b/I2Cdev.o \
+	${OBJECTDIR}/_ext/80f8d31b/Wire.o \
 	${OBJECTDIR}/_ext/5c0/MPU6050.o \
 	${OBJECTDIR}/Main.o
 
@@ -74,6 +75,11 @@ ${OBJECTDIR}/_ext/80f8d31b/I2Cdev.o: ../../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/80f8d31b
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -DOUTPUT_READABLE_EULER -I.. -I../../I2Cdev -include Arduino.h `pkg-config --cflags gdkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/80f8d31b/I2Cdev.o ../../I2Cdev/I2Cdev.cpp
+
+${OBJECTDIR}/_ext/80f8d31b/Wire.o: ../../I2Cdev/Wire.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/80f8d31b
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -DOUTPUT_READABLE_EULER -I.. -I../../I2Cdev -include Arduino.h `pkg-config --cflags gdkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/80f8d31b/Wire.o ../../I2Cdev/Wire.cpp
 
 ${OBJECTDIR}/_ext/5c0/MPU6050.o: ../MPU6050.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/5c0

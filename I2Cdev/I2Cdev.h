@@ -49,10 +49,6 @@ THE SOFTWARE.
 #define FALSE	(0==1)
 #endif
 
-#ifdef WIRING_PI
-#include "AbstractArduino.h"
-#endif /* WIRING_PI */
-
 class I2Cdev {
     public:
         I2Cdev();

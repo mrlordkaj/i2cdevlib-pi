@@ -37,13 +37,6 @@ THE SOFTWARE.
 
 #include "MPU6050.h"
 
-#ifdef WIRING_PI
-#define pgm_read_byte(x) (*(x))
-#define F(x) x
-#include "AbstractArduino.h"
-AbstractSerial Serial;
-#endif
-
 /** Specific address constructor.
  * @param address I2C address, uses default I2C address if none is specified
  * @see MPU6050_DEFAULT_ADDRESS
@@ -3357,9 +3350,9 @@ void MPU6050::PID(uint8_t ReadAddress, float kP,float kI, uint8_t Loops){
 void MPU6050::PrintActiveOffsets() {
 	uint8_t AOffsetRegister = (getDeviceID() < 0x38 )? MPU6050_RA_XA_OFFS_H:0x77;
 	int16_t Data[3];
-        //Serial.print(F("Offset Register 0x"));
+	//Serial.print(F("Offset Register 0x"));
 	//Serial.print(AOffsetRegister>>4,HEX);Serial.print(AOffsetRegister&0x0F,HEX);
-        Serial.print(F("\n//           X Accel  Y Accel  Z Accel   X Gyro   Y Gyro   Z Gyro\n//OFFSETS   "));
+	Serial.print(F("\n//           X Accel  Y Accel  Z Accel   X Gyro   Y Gyro   Z Gyro\n//OFFSETS   "));
 	if(AOffsetRegister == 0x06)	I2Cdev::readWords(devAddr, AOffsetRegister, 3, (uint16_t *)Data);
 	else {
 		I2Cdev::readWords(devAddr, AOffsetRegister, 1, (uint16_t *)Data);

@@ -52,7 +52,6 @@ THE SOFTWARE.
     #ifndef __PGMSPACE_H_
         #define __PGMSPACE_H_ 1
         #include <inttypes.h>
-#include <cstdio>
 
         #define PROGMEM
         #define PGM_P  const char *
@@ -292,18 +291,11 @@ uint8_t MPU6050::dmpInitialize() {
 	// get MPU hardware revision
 	setMemoryBank(0x10, true, true);
 	setMemoryStartAddress(0x06);
-#ifdef WIRING_PI
-        std::printf("Checking hardware revision...\n");
-        std::printf("Revision @ user[16][6] = %X\n", readMemoryByte());
-        std::printf("Resetting memory bank selection to 0...\n");
-#else
 	Serial.println(F("Checking hardware revision..."));
 	Serial.print(F("Revision @ user[16][6] = "));
 	Serial.println(readMemoryByte(), HEX);
 	Serial.println(F("Resetting memory bank selection to 0..."));
-#endif /* WIRING_PI */
 	setMemoryBank(0, false, false);
-
 
 	// check OTP bank valid
 	DEBUG_PRINTLN(F("Reading OTP bank valid flag..."));
