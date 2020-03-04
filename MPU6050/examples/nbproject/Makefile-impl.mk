@@ -24,14 +24,14 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=demo_dmp
+PROJECTNAME=examples
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=dmp_quat
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release 
+ALLCONFS=dmp_quat dmp_euler dmp_ypr dmp_areal dmp_aworld 
 
 
 # build

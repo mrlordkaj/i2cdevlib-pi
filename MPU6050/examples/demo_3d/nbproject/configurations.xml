@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../../../I2Cdev/AbstractArduino.h</itemPath>
+      <itemPath>../../../I2Cdev/Arduino.h</itemPath>
       <itemPath>../../../I2Cdev/I2Cdev.h</itemPath>
       <itemPath>../../MPU6050.h</itemPath>
       <itemPath>../../MPU6050_6Axis_MotionApps20.h</itemPath>
@@ -18,7 +18,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>../../../I2Cdev/AbstractArduino.cpp</itemPath>
+      <itemPath>../../../I2Cdev/Arduino.cpp</itemPath>
       <itemPath>../../../I2Cdev/I2Cdev.cpp</itemPath>
       <itemPath>../../MPU6050.cpp</itemPath>
       <itemPath>demo_3d.cpp</itemPath>
@@ -54,9 +54,11 @@
             <pElem>../..</pElem>
             <pElem>../../../I2Cdev</pElem>
           </incDir>
+          <incFile>
+            <pElem>Arduino.h</pElem>
+          </incFile>
           <preprocessorList>
             <Elem>DMP_FIFO_RATE=9</Elem>
-            <Elem>WIRING_PI</Elem>
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
@@ -66,19 +68,16 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
-          <output>/home/pi/demo_3d</output>
+          <output>/home/pi/MPU6050/demo_3d</output>
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs gtkmm-3.0`</linkerOptionItem>
           </linkerLibItems>
           <commandLine>-lwiringPi</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../../../I2Cdev/AbstractArduino.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="../../../I2Cdev/Arduino.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../../../I2Cdev/AbstractArduino.h" ex="false" tool="3" flavor2="0">
+      <item path="../../../I2Cdev/Arduino.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../../../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
       </item>

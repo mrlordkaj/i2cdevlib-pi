@@ -7,15 +7,15 @@
 # Macros
 TOP=`pwd`
 CND_PLATFORM=GNU-Linux
-CND_CONF=Release
+CND_CONF=dmp_euler
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=/home/pi/MPU6050/demo_3d
-OUTPUT_BASENAME=demo_3d
-PACKAGE_TOP_DIR=demo3d/
+OUTPUT_PATH=/home/pi/MPU6050/${CND_CONF}
+OUTPUT_BASENAME=${CND_CONF}
+PACKAGE_TOP_DIR=examples/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/demo3d/bin"
+makeDirectory "${NBTMPDIR}/examples/bin"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/demo3d.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/examples.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/demo3d.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/examples.tar *
 checkReturnCode
 
 # Cleanup

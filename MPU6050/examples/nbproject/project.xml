@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>demo_dmp</name>
+            <name>examples</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
@@ -12,7 +12,23 @@
             <sourceRootList/>
             <confList>
                 <confElem>
-                    <name>Release</name>
+                    <name>dmp_quat</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>dmp_euler</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>dmp_ypr</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>dmp_areal</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>dmp_aworld</name>
                     <type>1</type>
                 </confElem>
             </confList>
