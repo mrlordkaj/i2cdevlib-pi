@@ -22,16 +22,17 @@
  * THE SOFTWARE.
  */
 
-#include "Wire.h"
+#include <wiringPiI2C.h>
 #include <unistd.h>
+#include "Wire.h"
 
 TwoWire Wire;
 
-ssize_t regWrite(int __fd, const void *__buf, size_t __n) __wur {
+static inline ssize_t i2cWrite(int __fd, const void *__buf, size_t __n) __wur {
     return write(__fd, __buf, __n);
 }
 
-ssize_t regRead(int __fd, void *__buf, size_t __nbytes) __wur {
+static inline ssize_t i2cRead(int __fd, void *__buf, size_t __nbytes) __wur {
     return read(__fd, __buf, __nbytes);
 }
 
@@ -43,12 +44,24 @@ void TwoWire::begin(uint8_t address) {
     beginTransmission(address);
 }
 
+void TwoWire::begin(int address) {
+    begin((uint8_t)address);
+}
+
+void TwoWire::end() {
+    if (addr > 0) {
+        close(fd);
+        addr = fd = 0;
+    }
+}
+
 void TwoWire::setClock(uint32_t clock) {
     std::cerr << "Warning: You need set I2C clock in \"/boot/config.txt\" manually.\r\n" << std::flush;
 }
 
 void TwoWire::beginTransmission(uint8_t address) {
     if (address != addr) {
+        end(); // close previous device
         addr = address;
         fd = wiringPiI2CSetup(address);
     }
@@ -56,17 +69,25 @@ void TwoWire::beginTransmission(uint8_t address) {
     writeOffset = 0;
 }
 
+void TwoWire::beginTransmission(int address) {
+    beginTransmission((uint8_t)address);
+}
+
 uint8_t TwoWire::endTransmission(bool sendStop) {
     // TODO: sendStop
-    int rs = -1;
     if (addr > 0) {
         if (writeOffset > 0) {
-            rs = regWrite(fd, &writeBuffer, writeOffset);
+            return i2cWrite(fd, &writeBuffer, writeOffset);
+        } else if (readOffset > 0) {
+            return readOffset;
         }
-        close(fd);
-        addr = fd = 0;
+        return 0;
     }
-    return rs;
+    return -1;
+}
+
+uint8_t TwoWire::endTransmission() {
+    return endTransmission(true);
 }
 
 size_t TwoWire::write(uint8_t data) {
@@ -84,9 +105,12 @@ size_t TwoWire::write(uint8_t data) {
 size_t TwoWire::write(const uint8_t *data, size_t quantity) {
     if (addr > 0) {
         quantity = min(BUFFER_LENGTH-writeOffset, (int)quantity);
-        memcpy(writeBuffer+writeOffset, data, quantity);
-        writeOffset += quantity;
-        return quantity;
+        if (quantity > 0) {
+            memcpy(writeBuffer+writeOffset, data, quantity);
+            writeOffset += quantity;
+            return quantity;
+        }
+        return 0;
     }
     return -1;
 }
@@ -95,7 +119,11 @@ uint8_t TwoWire::requestFrom(uint8_t address, uint8_t quantity, uint32_t iaddres
     // TODO: iaddress, isize, sendStop
     beginTransmission(address);
     if (addr > 0) {
-        readAvailable = regRead(fd, (uint8_t*)&readBuffer, quantity);
+        if (quantity > BUFFER_LENGTH) {
+            // clamp to buffer length
+            quantity = BUFFER_LENGTH;
+        }
+        readAvailable = i2cRead(fd, (uint8_t*)&readBuffer, quantity);
         return readAvailable;
     }
     return -1;
@@ -103,6 +131,18 @@ uint8_t TwoWire::requestFrom(uint8_t address, uint8_t quantity, uint32_t iaddres
 
 uint8_t TwoWire::requestFrom(uint8_t address, uint8_t quantity, uint8_t sendStop) {
     return requestFrom((uint8_t)address, (uint8_t)quantity, (uint32_t)0, (uint8_t)0, (uint8_t)sendStop);
+}
+
+uint8_t TwoWire::requestFrom(uint8_t address, uint8_t quantity) {
+    return requestFrom((uint8_t)address, (uint8_t)quantity, (uint8_t)true);
+}
+
+uint8_t TwoWire::requestFrom(int address, int quantity) {
+    return requestFrom((uint8_t)address, (uint8_t)quantity, (uint8_t)true);
+}
+
+uint8_t TwoWire::requestFrom(int address, int quantity, int sendStop) {
+    return requestFrom((uint8_t)address, (uint8_t)quantity, (uint8_t)sendStop);
 }
 
 int TwoWire::available() {
@@ -117,4 +157,15 @@ int TwoWire::read() {
         return d;
     }
     return -1;
+}
+
+int TwoWire::peek() {
+    if (readAvailable > 0) {
+        return readBuffer[readOffset];
+    }
+    return -1;
+}
+
+void TwoWire::flush() {
+    // XXX: to be implemented.
 }

@@ -32,7 +32,7 @@
 // ================================================================
 
 long map(long x, long in_min, long in_max, long out_min, long out_max) {
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 char *dtostrf(double val, signed char width, unsigned char prec, char *sout) {
@@ -64,15 +64,22 @@ _Serial Serial;
 
 static void getLineFromCin(_Serial *serial) {
     std::string line;
-    while (true) {
+    while (serial->inRunning) {
         std::getline(std::cin, line);
         serial->inChars.append(line);
     }
 }
 
 void _Serial::begin(int baudrate) {
-    std::thread inThread(getLineFromCin, this);
-    inThread.detach();
+    if (!inRunning) {
+        inRunning = true;
+        std::thread inThread(getLineFromCin, this);
+        inThread.detach();
+    }
+}
+
+void _Serial::end() {
+    inRunning = false;
 }
 
 int _Serial::available() {
@@ -95,16 +102,16 @@ void _Serial::write(char val) {
 void _Serial::print(long val, int format) {
     switch (format) {
         case HEX:
-            std::cout << std::hex << std::uppercase << val << std::flush;
+            std::cout << std::hex << std::uppercase << val;
             return;
         case DEC:
-            std::cout << std::dec << val << std::flush;
+            std::cout << std::dec << val;
             return;
         case OCT:
-            std::cout << std::oct << val << std::flush;
+            std::cout << std::oct << val;
             return;
         case BIN:
-            std::cout << std::bitset<8>(val) << std::flush;
+            std::cout << std::bitset<8>(val);
             return;
     }
 }

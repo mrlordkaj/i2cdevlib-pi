@@ -30,21 +30,18 @@
 #define ARDUINO_H
 
 #include <wiringPi.h>
-#include <wiringPiI2C.h>
-#include <stdint.h>
-#include <unistd.h>
 #include <iostream>
 #include <math.h>
 #include <cstring>
 #include <algorithm>
 #include <inttypes.h>
-#include <vector>
+#include <avr/pgmspace.h>
 
 // ================================================================
 // ===                  ARDUINO PREDEFINITIONS                  ===
 // ================================================================
 
-#define ARDUINO 101
+#define ARDUINO 10812 // 1.8.12
 
 #define HEX 16
 #define DEC 10
@@ -70,60 +67,18 @@
 #define FALLING INT_EDGE_FALLING
 #define RISING  INT_EDGE_RISING
 
+// ================================================================
+// ===                ARDUINO MACROS SIMULATION                 ===
+// ================================================================
+
+//#define min(a,b) ((a)<(b)?(a):(b))
+//#define max(a,b) ((a)>(b)?(a):(b))
 //#define abs(x) ((x)>0?(x):-(x))
 //#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
 //#define round(x)     ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
 //#define radians(deg) ((deg)*DEG_TO_RAD)
 //#define degrees(rad) ((rad)*RAD_TO_DEG)
 //#define sq(x) ((x)*(x))
-
-
-// ================================================================
-// ===        Tom Carpenter's conditional PROGMEM code          ===
-// ===    http://forum.arduino.cc/index.php?topic=129407.0      ===
-// ================================================================
-
-#ifdef __AVR__
-#include <avr/pgmspace.h>
-#else
-// Teensy 3.0 library conditional PROGMEM code from Paul Stoffregen
-#ifndef __PGMSPACE_H_
-#define __PGMSPACE_H_
-#define PROGMEM
-#define PGM_P  const char *
-#define PSTR(str) (str)
-#define F(x) x
-
-typedef void prog_void;
-typedef char prog_char;
-typedef unsigned char prog_uchar;
-typedef int8_t prog_int8_t;
-typedef uint8_t prog_uint8_t;
-typedef int16_t prog_int16_t;
-typedef uint16_t prog_uint16_t;
-typedef int32_t prog_int32_t;
-typedef uint32_t prog_uint32_t;
-
-#define strcpy_P(dest, src) strcpy((dest), (src))
-#define strcat_P(dest, src) strcat((dest), (src))
-#define strcmp_P(a, b) strcmp((a), (b))
-
-#define pgm_read_byte(addr) (*(const unsigned char *)(addr))
-#define pgm_read_word(addr) (*(const unsigned short *)(addr))
-#define pgm_read_dword(addr) (*(const unsigned long *)(addr))
-#define pgm_read_float(addr) (*(const float *)(addr))
-
-#define pgm_read_byte_near(addr) pgm_read_byte(addr)
-#define pgm_read_word_near(addr) pgm_read_word(addr)
-#define pgm_read_dword_near(addr) pgm_read_dword(addr)
-#define pgm_read_float_near(addr) pgm_read_float(addr)
-#define pgm_read_byte_far(addr) pgm_read_byte(addr)
-#define pgm_read_word_far(addr) pgm_read_word(addr)
-#define pgm_read_dword_far(addr) pgm_read_dword(addr)
-#define pgm_read_float_far(addr) pgm_read_float(addr)
-#endif /* __PGMSPACE_H_ */
-#endif /* __AVR__ */
-
 
 // ================================================================
 // ===            ARDUINO CORE FUNCTIONS SIMULATION             ===
@@ -136,10 +91,14 @@ template<typename T> T min(T a, T b) {
 template<typename T> T max(T a, T b) {
     return a > b ? a : b;
 }
-    
+
+template<typename T> T abs(T x) {
+    return x > 0 ? x : -x;
+}
+  
 long map(long x, long in_min, long in_max, long out_min, long out_max);
 
-char *dtostrf (double val, signed char width, unsigned char prec, char *sout);
+char *dtostrf(double val, signed char width, unsigned char prec, char *sout);
 
 int digitalPinToInterrupt(int bcmPin);
 
@@ -152,18 +111,17 @@ void attachInterrupt(int pin, void (*isr)(void), int mode);
 
 class _Serial {
 public:
+    // reading stuff
+    bool inRunning = false;
     std::string inChars;
     
     void begin(int baudrate);
+    void end();
     int available();
     int read();
     void write(char val);
     void print(long val, int format);
     void println(long val, int format);
-    
-    bool operator ! () {
-        return false;
-    }
     
     template<typename T> void write(T* val, int count) {
         for (int i = 0; i < count; i++) {
@@ -173,12 +131,14 @@ public:
     }
     
     template<typename T> void print(T val) {
-        std::cout << val << std::flush;
+        std::cout << val;
     };
     
     template<typename T> void println(T val) {
         std::cout << val << "\r\n" << std::flush;
     };
+    
+    operator bool() { return true; }
 };
 
 extern _Serial Serial;

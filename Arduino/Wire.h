@@ -20,7 +20,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */
+*/
 
 /* 
  * Author: Thinh Pham
@@ -29,9 +29,9 @@
 #ifndef TwoWire_h
 #define TwoWire_h
 
-#include <cstdint>
+#include <inttypes.h>
 
-#define BUFFER_LENGTH 256
+#define BUFFER_LENGTH 32
 
 class TwoWire {
 private:
@@ -47,19 +47,35 @@ private:
     
 public:
     void begin();
-    void begin(uint8_t address);
-    void setClock(uint32_t clock);
-    void beginTransmission(uint8_t address);
-    uint8_t endTransmission(bool sendStop = true);
-    size_t write(uint8_t data);
-    size_t write(const uint8_t *data, size_t quantity);
-    uint8_t requestFrom(uint8_t address, uint8_t quantity, uint32_t iaddress, uint8_t isize, uint8_t sendStop);
-    uint8_t requestFrom(uint8_t address, uint8_t quantity, uint8_t sendStop = 1);
-    int available();
-    int read();
+    void begin(uint8_t);
+    void begin(int);
+    void end();
+    void setClock(uint32_t);
+    void beginTransmission(uint8_t);
+    void beginTransmission(int);
+    uint8_t endTransmission(void);
+    uint8_t endTransmission(bool);
+    uint8_t requestFrom(uint8_t, uint8_t);
+    uint8_t requestFrom(uint8_t, uint8_t, uint8_t);
+    uint8_t requestFrom(uint8_t, uint8_t, uint32_t, uint8_t, uint8_t);
+    uint8_t requestFrom(int, int);
+    uint8_t requestFrom(int, int, int);
+    /*virtual */size_t write(uint8_t);
+    /*virtual */size_t write(const uint8_t *, size_t);
+    /*virtual */int available(void);
+    /*virtual */int read(void);
+    /*virtual */int peek(void);
+    /*virtual */void flush(void);
+//    void onReceive( void (*)(int) );
+//    void onRequest( void (*)(void) );
+    
+    inline size_t write(unsigned long n) { return write((uint8_t)n); }
+    inline size_t write(long n) { return write((uint8_t)n); }
+    inline size_t write(unsigned int n) { return write((uint8_t)n); }
+    inline size_t write(int n) { return write((uint8_t)n); }
 };
 
 extern TwoWire Wire;
 
-#endif /* TwoWire_h */
+#endif
 

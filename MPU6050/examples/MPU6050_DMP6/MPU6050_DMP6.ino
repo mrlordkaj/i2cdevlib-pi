@@ -121,8 +121,8 @@ MPU6050 mpu;
 
 
 
-#define INTERRUPT_PIN 4 // Note: BCM pin 2, 3 used for I2C devices, avoid to use them
-#define LED_PIN 23      // BCM 13
+#define INTERRUPT_PIN 4 // Note: BCM 2/3 reserved for I2C devices, avoid to use them
+#define LED_PIN 13      // BCM 9
 bool blinkState = false;
 
 // MPU control/status vars
