@@ -46,6 +46,10 @@ char *dtostrf(double val, signed char width, unsigned char prec, char *sout) {
 
 const int GPIO_TO_WIRINGPI[28] = { 30,31,8,9,7,21,22,11,10,13,12,14,26,23,15,16,27,0,1,24,28,29,3,4,5,6,25,2 };
 
+/**
+ * Converts BCM GPIO pin to WiringPi interrupt pin.
+ * @see https://pinout.xyz/pinout/wiringpi#
+ */
 int digitalPinToInterrupt(int pin) {
     return GPIO_TO_WIRINGPI[pin];
 }
@@ -99,19 +103,4 @@ void _Serial::print(long val, int format) {
 void _Serial::println(long val, int format) {
     print(val, format);
     std::cout << "\r\n" << std::flush;
-}
-
-// ================================================================
-// ===                 ARDUINO WIRE SIMULATION                  ===
-// ================================================================
-
-_Wire Wire;
-
-void _Wire::begin() {
-    // TODO: not implemented yet
-    // see: wiringPiI2CSetup()
-}
-
-void _Wire::setClock(long t) {
-    // TODO: not implemented yet
 }

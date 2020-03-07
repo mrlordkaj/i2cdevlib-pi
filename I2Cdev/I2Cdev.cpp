@@ -171,16 +171,9 @@ int8_t I2Cdev::readWord(uint8_t devAddr, uint8_t regAddr, uint16_t *data, uint16
  * @return Number of bytes read (-1 indicates failure)
  */
 int8_t I2Cdev::readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data, uint16_t timeout) {
-    int8_t count = 0;
-    int fd = open("/dev/i2c-1", O_RDWR);
-
+    int fd = wiringPiI2CSetup(devAddr);
     if (fd < 0) {
         fprintf(stderr, "Failed to open device: %s\n", strerror(errno));
-        return(-1);
-    }
-    if (ioctl(fd, I2C_SLAVE, devAddr) < 0) {
-        fprintf(stderr, "Failed to select device: %s\n", strerror(errno));
-        close(fd);
         return(-1);
     }
     if (write(fd, &regAddr, 1) != 1) {
@@ -188,7 +181,7 @@ int8_t I2Cdev::readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8
         close(fd);
         return(-1);
     }
-    count = read(fd, data, length);
+    int8_t count = read(fd, data, length);
     if (count < 0) {
         fprintf(stderr, "Failed to read device(%d): %s\n", count, ::strerror(errno));
         close(fd);
@@ -199,7 +192,6 @@ int8_t I2Cdev::readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8
         return(-1);
     }
     close(fd);
-
     return count;
 }
 
@@ -338,21 +330,15 @@ bool I2Cdev::writeWord(uint8_t devAddr, uint8_t regAddr, uint16_t data) {
 bool I2Cdev::writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t* data) {
     int8_t count = 0;
     uint8_t buf[128];
-    int fd;
 
     if (length > 127) {
         fprintf(stderr, "Byte write count (%d) > 127\n", length);
         return(FALSE);
     }
 
-    fd = open("/dev/i2c-1", O_RDWR);
+    int fd = wiringPiI2CSetup(devAddr);
     if (fd < 0) {
         fprintf(stderr, "Failed to open device: %s\n", strerror(errno));
-        return(FALSE);
-    }
-    if (ioctl(fd, I2C_SLAVE, devAddr) < 0) {
-        fprintf(stderr, "Failed to select device: %s\n", strerror(errno));
-        close(fd);
         return(FALSE);
     }
     buf[0] = regAddr;
@@ -382,8 +368,8 @@ bool I2Cdev::writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_
 bool I2Cdev::writeWords(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint16_t* data) {
     int8_t count = 0;
     uint8_t buf[128];
-    int i, fd;
-
+    int i;
+    
     // Should do potential byteswap and call writeBytes() really, but that
     // messes with the callers buffer
 
@@ -392,16 +378,7 @@ bool I2Cdev::writeWords(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint16
         return(FALSE);
     }
 
-    fd = open("/dev/i2c-1", O_RDWR);
-    if (fd < 0) {
-        fprintf(stderr, "Failed to open device: %s\n", strerror(errno));
-        return(FALSE);
-    }
-    if (ioctl(fd, I2C_SLAVE, devAddr) < 0) {
-        fprintf(stderr, "Failed to select device: %s\n", strerror(errno));
-        close(fd);
-        return(FALSE);
-    }
+    int fd = wiringPiI2CSetup(devAddr);
     buf[0] = regAddr;
     for (i = 0; i < length; i++) {
         buf[i*2+1] = data[i] >> 8;

@@ -22,24 +22,22 @@
  * THE SOFTWARE.
  */
 
-/* 
- * Author: Thinh Pham
- */
+#include "Wire.h"
 
-#ifndef TwoWire_h
-#define TwoWire_h
+TwoWire Wire;
 
-#include <cstdint>
+void TwoWire::begin() {
+    // TODO: not implemented yet
+}
 
-class TwoWire {
-public:
-    void begin();
-    void begin(uint8_t address);
-    void setClock(long t);
-    void beginTransmission(uint8_t address);
-};
+void TwoWire::begin(uint8_t address) {
+    wiringPiI2CSetup(address);
+}
 
-extern TwoWire Wire;
+void TwoWire::setClock(long t) {
+    // TODO: not implemented yet
+}
 
-#endif /* TwoWire_h */
-
+void TwoWire::beginTransmission(uint8_t address) {
+    
+}

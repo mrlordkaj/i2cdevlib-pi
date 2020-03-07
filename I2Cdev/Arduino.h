@@ -134,10 +134,6 @@ long map(long x, long in_min, long in_max, long out_min, long out_max);
 
 char *dtostrf (double val, signed char width, unsigned char prec, char *sout);
 
-/**
- * Converts BCM GPIO pin to WiringPi interrupt pin.
- * @see https://pinout.xyz/pinout/wiringpi#
- */
 int digitalPinToInterrupt(int bcmPin);
 
 void attachInterrupt(int pin, void (*isr)(void), int mode);

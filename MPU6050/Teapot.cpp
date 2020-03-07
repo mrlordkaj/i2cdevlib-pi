@@ -25,6 +25,7 @@
 #ifdef MPU6050_TEAPOT
 
 #include "Teapot.h"
+#include "Wire.h"
 #include <math.h>
 
 int boxFaces[] = {
@@ -137,6 +138,7 @@ void Init() {
     
     // initialize device
     Serial.println("Initializing I2C devices...");
+    Wire.begin();
     mpu.initialize();
     
     // verify connection
