@@ -22,20 +22,36 @@
  * THE SOFTWARE.
  */
 
-/* 
- * Author: Thinh Pham
+#ifdef MPU6050_DMP6
+#include "examples/MPU6050_DMP6/MPU6050_DMP6.ino"
+#elif defined MPU6050_RAW
+#include "examples/MPU6050_raw/MPU6050_raw.ino"
+#elif defined MPU6050_TEAPOT
+#include "Teapot.h"
+#endif
+
+/*
+ * Simulates Arduino's lifecycle.
  */
-
-#ifndef WIRE_H
-#define WIRE_H
-
-class _Wire {
-public:
-    void begin();
-    void setClock(long t);
-};
-
-extern _Wire Wire;
-
-#endif /* WIRE_H */
+int main(int argc, char *argv[]) {
+    wiringPiSetup();
+    
+#ifdef MPU6050_TEAPOT
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH | GLUT_STENCIL);
+    glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+    glutInitWindowPosition(200, 100);
+    glutCreateWindow("MPU6050 Demo");
+    glutDisplayFunc(GLUT_display);
+    glutReshapeFunc(GLUT_reshape);
+    setup();
+    glutMainLoop();
+#else
+    setup();
+    while (true)
+        loop();
+#endif
+    
+    return 0;
+}
 

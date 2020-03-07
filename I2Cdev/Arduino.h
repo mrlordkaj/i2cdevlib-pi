@@ -1,18 +1,25 @@
 /*
- * Copyright (C) 2020 Thinh Pham
+ * The MIT License
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Copyright 2020 Thinh Pham.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
 
 /* 
@@ -23,6 +30,7 @@
 #define ARDUINO_H
 
 #include <wiringPi.h>
+#include <wiringPiI2C.h>
 #include <stdint.h>
 #include <unistd.h>
 #include <iostream>
@@ -60,34 +68,6 @@
 #define FALLING 2
 #define RISING 3
 
-//#if defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
-//  #define DEFAULT 0
-//  #define EXTERNAL 1
-//  #define INTERNAL1V1 2
-//  #define INTERNAL INTERNAL1V1
-//#elif defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
-//  #define DEFAULT 0
-//  #define EXTERNAL 4
-//  #define INTERNAL1V1 8
-//  #define INTERNAL INTERNAL1V1
-//  #define INTERNAL2V56 9
-//  #define INTERNAL2V56_EXTCAP 13
-//#else  
-//#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega1284__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega644A__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega644PA__)
-//#define INTERNAL1V1 2
-//#define INTERNAL2V56 3
-//#else
-//#define INTERNAL 3
-//#endif
-//#define DEFAULT 1
-//#define EXTERNAL 0
-//#endif
-//
-//// undefine stdlib's abs if encountered
-//#ifdef abs
-//#undef abs
-//#endif
-
 //#define abs(x) ((x)>0?(x):-(x))
 //#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
 //#define round(x)     ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
@@ -98,7 +78,7 @@
 // Tom Carpenter's conditional PROGMEM code
 // http://forum.arduino.cc/index.php?topic=129407.0
 #ifdef __AVR__
-    #include <avr/pgmspace.h>
+#include <avr/pgmspace.h>
 #else
 // Teensy 3.0 library conditional PROGMEM code from Paul Stoffregen
 #ifndef __PGMSPACE_H_
@@ -161,9 +141,21 @@ char *dtostrf (double val, signed char width, unsigned char prec, char *sout);
 class _Serial {
 public:
     void begin(int baudrate);
+    int available();
+    int read();
     void write(char val);
     void print(long val, int format);
     void println(long val, int format);
+    
+    bool operator ! () {
+        return false;
+    }
+    
+    template<typename T> void write(T* val, int count) {
+        for (int i = 0; i < count; i++) {
+            std::cout << val[i];
+        }
+    }
     
     template<typename T> void print(T val) {
         std::cout << val;

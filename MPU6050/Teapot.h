@@ -26,16 +26,27 @@
  * Author: Thinh Pham
  */
 
-#ifndef WIRE_H
-#define WIRE_H
+#ifndef MPUTEAPOT_H
+#define MPUTEAPOT_H
 
-class _Wire {
-public:
-    void begin();
-    void setClock(long t);
-};
+#define GL_GLEXT_PROTOTYPES
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
 
-extern _Wire Wire;
+#define WINDOW_WIDTH 300
+#define WINDOW_HEIGHT 300
+#define EPS 1.1920928955078125E-7f
 
-#endif /* WIRE_H */
+void drawBox(float width, float height, float length);
+
+void drawCylinder(float topRadius, float bottomRadius, float tall, float sides);
+
+void GLUT_display();
+
+void GLUT_reshape(int w, int h);
+
+void setup();
+
+#endif /* MPUTEAPOT_H */
 
