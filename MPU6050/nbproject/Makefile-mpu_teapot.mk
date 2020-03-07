@@ -35,9 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/847938aa/Arduino.o \
+	${OBJECTDIR}/_ext/d28afab9/Arduino.o \
+	${OBJECTDIR}/_ext/d28afab9/Wire.o \
 	${OBJECTDIR}/_ext/847938aa/I2Cdev.o \
-	${OBJECTDIR}/_ext/847938aa/Wire.o \
 	${OBJECTDIR}/MPU6050.o \
 	${OBJECTDIR}/Main.o \
 	${OBJECTDIR}/Teapot.o
@@ -67,35 +67,35 @@ LDLIBSOPTIONS=
 	${MKDIR} -p /home/pi/MPU6050
 	${LINK.cc} -o /home/pi/MPU6050/${CND_CONF} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -lGL -lglut -lGLU
 
-${OBJECTDIR}/_ext/847938aa/Arduino.o: ../I2Cdev/Arduino.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
+${OBJECTDIR}/_ext/d28afab9/Arduino.o: ../Arduino/Arduino.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../I2Cdev -I. -include ../I2Cdev/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/Arduino.o ../I2Cdev/Arduino.cpp
+	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
+
+${OBJECTDIR}/_ext/d28afab9/Wire.o: ../Arduino/Wire.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
 
 ${OBJECTDIR}/_ext/847938aa/I2Cdev.o: ../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../I2Cdev -I. -include ../I2Cdev/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
-
-${OBJECTDIR}/_ext/847938aa/Wire.o: ../I2Cdev/Wire.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../I2Cdev -I. -include ../I2Cdev/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/Wire.o ../I2Cdev/Wire.cpp
+	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
 
 ${OBJECTDIR}/MPU6050.o: MPU6050.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../I2Cdev -I. -include ../I2Cdev/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MPU6050.o MPU6050.cpp
+	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MPU6050.o MPU6050.cpp
 
 ${OBJECTDIR}/Main.o: Main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../I2Cdev -I. -include ../I2Cdev/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Main.o Main.cpp
+	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Main.o Main.cpp
 
 ${OBJECTDIR}/Teapot.o: Teapot.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../I2Cdev -I. -include ../I2Cdev/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Teapot.o Teapot.cpp
+	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Teapot.o Teapot.cpp
 
 # Subprojects
 .build-subprojects:

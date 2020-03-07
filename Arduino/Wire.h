@@ -31,12 +31,32 @@
 
 #include <cstdint>
 
+#define BUFFER_LENGTH 256
+
 class TwoWire {
+private:
+    uint8_t addr = 0;
+    int fd = 0;
+    // read stuff
+    uint8_t readBuffer[BUFFER_LENGTH];
+    int readAvailable = 0;
+    int readOffset = 0;
+    // write stuff
+    uint8_t writeBuffer[BUFFER_LENGTH];
+    int writeOffset = 0;
+    
 public:
     void begin();
     void begin(uint8_t address);
-    void setClock(long t);
+    void setClock(uint32_t clock);
     void beginTransmission(uint8_t address);
+    uint8_t endTransmission(bool sendStop = true);
+    size_t write(uint8_t data);
+    size_t write(const uint8_t *data, size_t quantity);
+    uint8_t requestFrom(uint8_t address, uint8_t quantity, uint32_t iaddress, uint8_t isize, uint8_t sendStop);
+    uint8_t requestFrom(uint8_t address, uint8_t quantity, uint8_t sendStop = 1);
+    int available();
+    int read();
 };
 
 extern TwoWire Wire;

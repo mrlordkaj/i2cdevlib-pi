@@ -25,9 +25,7 @@
 #include "Arduino.h"
 #include "Wire.h"
 #include <bitset>
-//#include <chrono>
-//#include <future>
-//#include <string>
+#include <thread>
 
 // ================================================================
 // ===            ARDUINO CORE FUNCTIONS SIMULATION             ===
@@ -64,19 +62,30 @@ void attachInterrupt(int pin, void (*isr)(void), int mode) {
 
 _Serial Serial;
 
+static void getLineFromCin(_Serial *serial) {
+    std::string line;
+    while (true) {
+        std::getline(std::cin, line);
+        serial->inChars.append(line);
+    }
+}
+
 void _Serial::begin(int baudrate) {
-    // TODO: not implemented yet
-    // async stdin: https://gist.github.com/vmrob/ff20420a20c59b5a98a1
+    std::thread inThread(getLineFromCin, this);
+    inThread.detach();
 }
 
 int _Serial::available() {
-    // TODO: not implemented yet
-    return 1;
+    return inChars.length();
 }
 
 int _Serial::read() {
-    // TODO: not implemented yet
-    return 0;
+    if (inChars.length() > 0) {
+        int d = inChars.at(0);
+        inChars.erase(0);
+        return d;
+    }
+    return -1;
 }
 
 void _Serial::write(char val) {
@@ -86,7 +95,7 @@ void _Serial::write(char val) {
 void _Serial::print(long val, int format) {
     switch (format) {
         case HEX:
-            std::cout << std::hex << val << std::flush;
+            std::cout << std::hex << std::uppercase << val << std::flush;
             return;
         case DEC:
             std::cout << std::dec << val << std::flush;

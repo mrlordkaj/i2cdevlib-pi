@@ -10,7 +10,7 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../I2Cdev</sourceRootElem>
+                <sourceRootElem>../Arduino</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

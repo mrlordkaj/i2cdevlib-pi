@@ -38,12 +38,14 @@
 #include <cstring>
 #include <algorithm>
 #include <inttypes.h>
+#include <vector>
 
 // ================================================================
 // ===                  ARDUINO PREDEFINITIONS                  ===
 // ================================================================
 
-#define BUFFER_LENGTH 32
+#define ARDUINO 101
+
 #define HEX 16
 #define DEC 10
 #define OCT 8
@@ -75,8 +77,12 @@
 //#define degrees(rad) ((rad)*RAD_TO_DEG)
 //#define sq(x) ((x)*(x))
 
-// Tom Carpenter's conditional PROGMEM code
-// http://forum.arduino.cc/index.php?topic=129407.0
+
+// ================================================================
+// ===        Tom Carpenter's conditional PROGMEM code          ===
+// ===    http://forum.arduino.cc/index.php?topic=129407.0      ===
+// ================================================================
+
 #ifdef __AVR__
 #include <avr/pgmspace.h>
 #else
@@ -118,6 +124,7 @@ typedef uint32_t prog_uint32_t;
 #endif /* __PGMSPACE_H_ */
 #endif /* __AVR__ */
 
+
 // ================================================================
 // ===            ARDUINO CORE FUNCTIONS SIMULATION             ===
 // ================================================================
@@ -138,12 +145,15 @@ int digitalPinToInterrupt(int bcmPin);
 
 void attachInterrupt(int pin, void (*isr)(void), int mode);
 
+
 // ================================================================
 // ===                ARDUINO SERIAL SIMULATION                 ===
 // ================================================================
 
 class _Serial {
 public:
+    std::string inChars;
+    
     void begin(int baudrate);
     int available();
     int read();

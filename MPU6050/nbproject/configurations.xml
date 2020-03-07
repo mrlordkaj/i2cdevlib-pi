@@ -8,23 +8,23 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../I2Cdev/Arduino.h</itemPath>
+      <itemPath>../Arduino/Arduino.h</itemPath>
       <itemPath>../I2Cdev/I2Cdev.h</itemPath>
       <itemPath>MPU6050.h</itemPath>
       <itemPath>MPU6050_6Axis_MotionApps20.h</itemPath>
       <itemPath>Teapot.h</itemPath>
-      <itemPath>../I2Cdev/Wire.h</itemPath>
+      <itemPath>../Arduino/Wire.h</itemPath>
       <itemPath>helper_3dmath.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>../I2Cdev/Arduino.cpp</itemPath>
+      <itemPath>../Arduino/Arduino.cpp</itemPath>
       <itemPath>../I2Cdev/I2Cdev.cpp</itemPath>
       <itemPath>MPU6050.cpp</itemPath>
       <itemPath>Main.cpp</itemPath>
       <itemPath>Teapot.cpp</itemPath>
-      <itemPath>../I2Cdev/Wire.cpp</itemPath>
+      <itemPath>../Arduino/Wire.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -39,7 +39,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../I2Cdev</Elem>
+    <Elem>../Arduino</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -56,11 +56,12 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
+            <pElem>../Arduino</pElem>
             <pElem>../I2Cdev</pElem>
             <pElem>.</pElem>
           </incDir>
           <incFile>
-            <pElem>../I2Cdev/Arduino.h</pElem>
+            <pElem>../Arduino/Arduino.h</pElem>
           </incFile>
           <preprocessorList>
             <Elem>MPU6050_DMP6</Elem>
@@ -77,17 +78,17 @@
           <commandLine>-lwiringPi -lpthread</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../I2Cdev/Arduino.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../I2Cdev/Arduino.h" ex="false" tool="3" flavor2="0">
+      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../I2Cdev/Wire.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../I2Cdev/Wire.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MPU6050.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -117,11 +118,12 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
+            <pElem>../Arduino</pElem>
             <pElem>../I2Cdev</pElem>
             <pElem>.</pElem>
           </incDir>
           <incFile>
-            <pElem>../I2Cdev/Arduino.h</pElem>
+            <pElem>../Arduino/Arduino.h</pElem>
           </incFile>
           <preprocessorList>
             <Elem>MPU6050_RAW</Elem>
@@ -138,17 +140,17 @@
           <commandLine>-lwiringPi -lpthread</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../I2Cdev/Arduino.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../I2Cdev/Arduino.h" ex="false" tool="3" flavor2="0">
+      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../I2Cdev/Wire.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../I2Cdev/Wire.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MPU6050.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -178,11 +180,12 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
+            <pElem>../Arduino</pElem>
             <pElem>../I2Cdev</pElem>
             <pElem>.</pElem>
           </incDir>
           <incFile>
-            <pElem>../I2Cdev/Arduino.h</pElem>
+            <pElem>../Arduino/Arduino.h</pElem>
           </incFile>
           <preprocessorList>
             <Elem>MPU6050_TEAPOT</Elem>
@@ -199,17 +202,17 @@
           <commandLine>-lwiringPi -lpthread -lGL -lglut -lGLU</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../I2Cdev/Arduino.cpp" ex="false" tool="1" flavor2="9">
+      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../I2Cdev/Arduino.h" ex="false" tool="3" flavor2="0">
+      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="9">
       </item>
       <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../I2Cdev/Wire.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../I2Cdev/Wire.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MPU6050.cpp" ex="false" tool="1" flavor2="9">
       </item>
