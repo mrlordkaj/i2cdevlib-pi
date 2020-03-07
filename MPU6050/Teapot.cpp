@@ -107,6 +107,8 @@ void drawCylinder(float topRadius, float bottomRadius, float tall, float sides) 
 // AD0 high = 0x69
 MPU6050 mpu;
 
+#define INTERRUPT_PIN 4  // use pin 2 on Arduino Uno & most boards
+
 // MPU control/status vars
 bool dmpReady = false;  // set true if DMP init was successful
 uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
@@ -114,10 +116,15 @@ uint8_t devStatus;      // return status after each device operation (0 = succes
 uint16_t packetSize;    // expected DMP packet size (default is 42 bytes)
 uint16_t fifoCount;     // count of all bytes currently in FIFO
 uint8_t fifoBuffer[64]; // FIFO storage buffer
-float mpuAxis[4];
+float mpuAxis[4];       // quaternion to axis angle (in degrees)
 
-void setup() {
-    // opengl contex
+
+// ================================================================
+// ===                      INITIAL SETUP                       ===
+// ================================================================
+
+void Init() {
+    // opengl context
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
@@ -129,15 +136,15 @@ void setup() {
     glTranslatef(0.0,0.0, -400);
     
     // initialize device
-    Serial.println(F("Initializing I2C devices..."));
+    Serial.println("Initializing I2C devices...");
     mpu.initialize();
     
     // verify connection
-    Serial.println(F("Testing device connections..."));
-    Serial.println(mpu.testConnection() ? F("MPU6050 connection successful") : F("MPU6050 connection failed"));
+    Serial.println("Testing device connections...");
+    Serial.println(mpu.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");
     
     // load and configure the DMP
-    Serial.println(F("Initializing DMP..."));
+    Serial.println("Initializing DMP...");
     devStatus = mpu.dmpInitialize();
     
     // supply your own gyro offsets here, scaled for min sensitivity
@@ -153,18 +160,14 @@ void setup() {
         mpu.CalibrateGyro(6);
         mpu.PrintActiveOffsets();
         // turn on the DMP, now that it's ready
-        Serial.println(F("Enabling DMP..."));
+        Serial.println("Enabling DMP...");
         mpu.setDMPEnabled(true);
 
-        // enable Arduino interrupt detection
-//        Serial.print(F("Enabling interrupt detection (Arduino external interrupt "));
-//        Serial.print(digitalPinToInterrupt(INTERRUPT_PIN));
-//        Serial.println(F(")..."));
-//        attachInterrupt(digitalPinToInterrupt(INTERRUPT_PIN), dmpDataReady, RISING);
+        // enable interrupt detection
         mpuIntStatus = mpu.getIntStatus();
 
         // set our DMP Ready flag so the main loop() function knows it's okay to use it
-        Serial.println(F("DMP ready! Waiting for first interrupt..."));
+        Serial.println("DMP ready! Waiting for first interrupt...");
         dmpReady = true;
 
         // get expected DMP packet size for later comparison
@@ -174,11 +177,16 @@ void setup() {
         // 1 = initial memory load failed
         // 2 = DMP configuration updates failed
         // (if it's going to break, usually the code will be 1)
-        Serial.print(F("DMP Initialization failed (code "));
+        Serial.print("DMP Initialization failed (code ");
         Serial.print(devStatus);
-        Serial.println(F(")"));
+        Serial.println(")");
     }
 }
+
+
+// ================================================================
+// ===                    MAIN PROGRAM LOOP                     ===
+// ================================================================
 
 void updateAxisAngle(float w, float x, float y, float z) {
     float sa = (float) sqrt(1.0f - w * w);
@@ -187,10 +195,10 @@ void updateAxisAngle(float w, float x, float y, float z) {
     } else {
         sa = 1.0f / sa;
     }
-    mpuAxis[0] = (float) acos(w) * 2.0f;
+    mpuAxis[0] = (float) acos(w) * -2.0f * RAD_TO_DEG;
     mpuAxis[1] = x * sa;
-    mpuAxis[2] = y * sa;
-    mpuAxis[3] = z * sa;
+    mpuAxis[3] = y * sa;
+    mpuAxis[2] = z * sa;
 }
 
 void GLUT_display() {
@@ -209,7 +217,7 @@ void GLUT_display() {
         if (y >= 2) y -= 4;
         if (z >= 2) z -= 4;
         updateAxisAngle(w, x, y, z);
-        glRotatef(-mpuAxis[0]*RAD_TO_DEG, mpuAxis[1], mpuAxis[3], mpuAxis[2]);
+        glRotatef(mpuAxis[0], mpuAxis[1], mpuAxis[2], mpuAxis[3]);
         
         // draw main body in red
         glColor3ub(255, 0, 0);

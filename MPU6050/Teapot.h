@@ -46,7 +46,7 @@ void GLUT_display();
 
 void GLUT_reshape(int w, int h);
 
-void setup();
+void Init();
 
 #endif /* MPUTEAPOT_H */
 

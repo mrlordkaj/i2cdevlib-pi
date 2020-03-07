@@ -121,8 +121,8 @@ MPU6050 mpu;
 
 
 
-#define INTERRUPT_PIN 2  // use pin 2 on Arduino Uno & most boards
-#define LED_PIN 13 // (Arduino is 13, Teensy is 11, Teensy++ is 6)
+#define INTERRUPT_PIN 4 // Note: BCM pin 2, 3 used for I2C devices, avoid to use them
+#define LED_PIN 23      // BCM 13
 bool blinkState = false;
 
 // MPU control/status vars
@@ -219,10 +219,10 @@ void setup() {
         mpu.setDMPEnabled(true);
 
         // enable Arduino interrupt detection
-//        Serial.print(F("Enabling interrupt detection (Arduino external interrupt "));
-//        Serial.print(digitalPinToInterrupt(INTERRUPT_PIN));
-//        Serial.println(F(")..."));
-//        attachInterrupt(digitalPinToInterrupt(INTERRUPT_PIN), dmpDataReady, RISING);
+        Serial.print(F("Enabling interrupt detection (Arduino external interrupt "));
+        Serial.print(digitalPinToInterrupt(INTERRUPT_PIN));
+        Serial.println(F(")..."));
+        attachInterrupt(digitalPinToInterrupt(INTERRUPT_PIN), dmpDataReady, RISING);
         mpuIntStatus = mpu.getIntStatus();
 
         // set our DMP Ready flag so the main loop() function knows it's okay to use it

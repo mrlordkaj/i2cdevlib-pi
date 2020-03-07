@@ -40,7 +40,7 @@
 #include <inttypes.h>
 
 // ================================================================
-// ===                  ARDUINO PREDEFINATIONS                  ===
+// ===                  ARDUINO PREDEFINITIONS                  ===
 // ================================================================
 
 #define BUFFER_LENGTH 32
@@ -64,9 +64,9 @@
 #define LSBFIRST 0
 #define MSBFIRST 1
 
-#define CHANGE 1
-#define FALLING 2
-#define RISING 3
+#define CHANGE  INT_EDGE_BOTH
+#define FALLING INT_EDGE_FALLING
+#define RISING  INT_EDGE_RISING
 
 //#define abs(x) ((x)>0?(x):-(x))
 //#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
@@ -134,6 +134,14 @@ long map(long x, long in_min, long in_max, long out_min, long out_max);
 
 char *dtostrf (double val, signed char width, unsigned char prec, char *sout);
 
+/**
+ * Converts BCM GPIO pin to WiringPi interrupt pin.
+ * @see https://pinout.xyz/pinout/wiringpi#
+ */
+int digitalPinToInterrupt(int bcmPin);
+
+void attachInterrupt(int pin, void (*isr)(void), int mode);
+
 // ================================================================
 // ===                ARDUINO SERIAL SIMULATION                 ===
 // ================================================================
@@ -155,14 +163,15 @@ public:
         for (int i = 0; i < count; i++) {
             std::cout << val[i];
         }
+        std::cout << std::flush;
     }
     
     template<typename T> void print(T val) {
-        std::cout << val;
+        std::cout << val << std::flush;
     };
     
     template<typename T> void println(T val) {
-        std::cout << val << "\r\n";
+        std::cout << val << "\r\n" << std::flush;
     };
 };
 

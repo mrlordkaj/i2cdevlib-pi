@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     glutCreateWindow("MPU6050 Demo");
     glutDisplayFunc(GLUT_display);
     glutReshapeFunc(GLUT_reshape);
-    setup();
+    Init();
     glutMainLoop();
 #else
     setup();

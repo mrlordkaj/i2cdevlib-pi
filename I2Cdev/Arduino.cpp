@@ -24,6 +24,7 @@
 
 #include "Arduino.h"
 #include "Wire.h"
+#include <bitset>
 //#include <chrono>
 //#include <future>
 //#include <string>
@@ -41,6 +42,16 @@ char *dtostrf(double val, signed char width, unsigned char prec, char *sout) {
     sprintf(fmt, "%%%d.%df", width, prec);
     sprintf(sout, fmt, val);
     return sout;
+}
+
+const int GPIO_TO_WIRINGPI[28] = { 30,31,8,9,7,21,22,11,10,13,12,14,26,23,15,16,27,0,1,24,28,29,3,4,5,6,25,2 };
+
+int digitalPinToInterrupt(int pin) {
+    return GPIO_TO_WIRINGPI[pin];
+}
+
+void attachInterrupt(int pin, void (*isr)(void), int mode) {
+    wiringPiISR(pin, mode, isr);
 }
 
 // ================================================================
@@ -65,29 +76,29 @@ int _Serial::read() {
 }
 
 void _Serial::write(char val) {
-    std::cout << val;
+    std::cout << val << std::flush;
 }
 
 void _Serial::print(long val, int format) {
     switch (format) {
         case HEX:
-            printf("%X", val);
+            std::cout << std::hex << val << std::flush;
             return;
         case DEC:
-            printf("%d", val);
+            std::cout << std::dec << val << std::flush;
             return;
         case OCT:
-            printf("%o", val);
+            std::cout << std::oct << val << std::flush;
             return;
         case BIN:
-            printf("%b", val);
+            std::cout << std::bitset<8>(val) << std::flush;
             return;
     }
 }
 
 void _Serial::println(long val, int format) {
     print(val, format);
-    printf("\r\n");
+    std::cout << "\r\n" << std::flush;
 }
 
 // ================================================================
