@@ -27,7 +27,7 @@ If you get something, then you have it already installed. Otherwise, you must ru
 # sudo apt-get install wiringpi
 ```
 That enough for most of our raw and dump demos.
-In case you want to see 3D demos, you need an OpenGL library:
+In case you want to see 3D demos, you need an additional OpenGL library:
 ```
 # sudo apt-get install freeglut3-dev
 ```
@@ -40,7 +40,7 @@ $ git clone https://github.com/mrlordkaj/rpi-i2cdevlib.git
 
 $ cd rpi-i2cdevlib/MPU6050
 ```
-Now, we have 3 types of demostration of your choice:
+You have 3 types of demostration of your choice:
 - `$ make CONF=mpu_raw` will builds `mpu_raw` demo.
 - `$ make CONF=mpu_dmp` will builds `mpu_dmp` demo.
 - `$ make CONF=mpu_teapot` will builds `mpu_teapot` demo.
