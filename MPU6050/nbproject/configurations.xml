@@ -82,7 +82,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
-          <output>/home/pi/MPU6050/${CND_CONF}</output>
+          <output>${CND_DISTDIR}/${CND_CONF}</output>
           <commandLine>-lwiringPi -lpthread</commandLine>
         </linkerTool>
       </compileType>
@@ -146,7 +146,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
-          <output>/home/pi/MPU6050/${CND_CONF}</output>
+          <output>${CND_DISTDIR}/${CND_CONF}</output>
           <commandLine>-lwiringPi -lpthread</commandLine>
         </linkerTool>
       </compileType>
@@ -210,7 +210,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
-          <output>/home/pi/MPU6050/${CND_CONF}</output>
+          <output>${CND_DISTDIR}/${CND_CONF}</output>
           <commandLine>-lwiringPi -lpthread -lGL -lglut -lGLU</commandLine>
         </linkerTool>
       </compileType>
