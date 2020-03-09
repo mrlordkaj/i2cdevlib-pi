@@ -31,11 +31,11 @@
 
 #include <wiringPi.h>
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <cstring>
-#include <algorithm>
 #include <inttypes.h>
 #include <avr/pgmspace.h>
+#include <avr/dtostrf.h>
 
 // ================================================================
 // ===                  ARDUINO PREDEFINITIONS                  ===
@@ -71,18 +71,11 @@
 // ===                ARDUINO MACROS SIMULATION                 ===
 // ================================================================
 
-//#define min(a,b) ((a)<(b)?(a):(b))
-//#define max(a,b) ((a)>(b)?(a):(b))
-//#define abs(x) ((x)>0?(x):-(x))
 //#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
 //#define round(x)     ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
 //#define radians(deg) ((deg)*DEG_TO_RAD)
 //#define degrees(rad) ((rad)*RAD_TO_DEG)
 //#define sq(x) ((x)*(x))
-
-// ================================================================
-// ===            ARDUINO CORE FUNCTIONS SIMULATION             ===
-// ================================================================
 
 template<typename T> T min(T a, T b) {
     return a < b ? a : b;
@@ -95,12 +88,10 @@ template<typename T> T max(T a, T b) {
 template<typename T> T abs(T x) {
     return x > 0 ? x : -x;
 }
-  
+
 long map(long x, long in_min, long in_max, long out_min, long out_max);
 
-char *dtostrf(double val, signed char width, unsigned char prec, char *sout);
-
-int digitalPinToInterrupt(int bcmPin);
+int digitalPinToInterrupt(int pin);
 
 void attachInterrupt(int pin, void (*isr)(void), int mode);
 

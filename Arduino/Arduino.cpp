@@ -35,13 +35,6 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-char *dtostrf(double val, signed char width, unsigned char prec, char *sout) {
-    char fmt[20];
-    sprintf(fmt, "%%%d.%df", width, prec);
-    sprintf(sout, fmt, val);
-    return sout;
-}
-
 const int GPIO_TO_WIRINGPI[28] = { 30,31,8,9,7,21,22,11,10,13,12,14,26,23,15,16,27,0,1,24,28,29,3,4,5,6,25,2 };
 
 /**

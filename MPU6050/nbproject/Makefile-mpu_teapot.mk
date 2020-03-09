@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/d28afab9/Arduino.o \
 	${OBJECTDIR}/_ext/d28afab9/Wire.o \
+	${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o \
 	${OBJECTDIR}/_ext/847938aa/I2Cdev.o \
 	${OBJECTDIR}/MPU6050.o \
 	${OBJECTDIR}/Main.o \
@@ -76,6 +77,11 @@ ${OBJECTDIR}/_ext/d28afab9/Wire.o: ../Arduino/Wire.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -DMPU6050_TEAPOT -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
+
+${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o: ../Arduino/avr/dtostrf.c
+	${MKDIR} -p ${OBJECTDIR}/_ext/4ac3ce87
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
 
 ${OBJECTDIR}/_ext/847938aa/I2Cdev.o: ../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
