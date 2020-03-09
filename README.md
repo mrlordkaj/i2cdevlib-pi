@@ -1,4 +1,4 @@
-# i2cdevlib
+# i2cdevlib-pi
 
 This is a forked version of `i2cdevlib`. Which ported in hope to runs smoothly on RaspberryPi devices.
 It inherited [The MIT license](LICENSE) from original project.
@@ -36,7 +36,7 @@ In case you want to see 3D demos, you need an additional OpenGL library:
 
 Clone our source code:
 ```
-$ git clone https://github.com/mrlordkaj/rpi-i2cdevlib.git
+$ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
 $ cd rpi-i2cdevlib/MPU6050
 ```
