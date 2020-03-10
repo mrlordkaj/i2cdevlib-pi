@@ -31,8 +31,8 @@
 
 #include <wiringPi.h>
 #include <inttypes.h>
-#include <avr/pgmspace.h>
-#include <avr/dtostrf.h>
+#include "avr/pgmspace.h"
+#include "avr/dtostrf.h"
 
 #include <iostream>
 #include <cmath>

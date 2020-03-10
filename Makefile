@@ -60,6 +60,10 @@ build: .build-post
 # Add your post 'build' code here...
 # Copy all header files
 	[ -d ${CND_DISTDIR}/include ] || mkdir ${CND_DISTDIR}/include
+	[ -d ${CND_DISTDIR}/include/avr ] || mkdir ${CND_DISTDIR}/include/avr
+	cp Arduino/avr/*.h ${CND_DISTDIR}/include/avr
+	cp Arduino/Arduino.h ${CND_DISTDIR}/include
+	cp I2Cdev/I2Cdev.h ${CND_DISTDIR}/include
 	cp AD7746/AD7746.h ${CND_DISTDIR}/include
 	cp ADS1115/ADS1115.h ${CND_DISTDIR}/include
 	cp ADXL345/ADXL345.h ${CND_DISTDIR}/include

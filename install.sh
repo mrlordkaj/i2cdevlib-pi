@@ -14,6 +14,8 @@ sudo apt-get install freeglut3-dev -y
 make
 cd dist
 
-sudo cp libi2cdev.so /usr/lib/libi2cdev.so
 sudo mkdir -p /usr/include/i2cdevlib
+sudo mkdir -p /usr/include/i2cdevlib/avr
+sudo cp include/avr/*.h /usr/include/i2cdevlib/avr
 sudo cp include/*.h /usr/include/i2cdevlib
+sudo cp libi2cdev.so /usr/lib/libi2cdev.so
