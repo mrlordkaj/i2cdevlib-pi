@@ -65,7 +65,7 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/libMS5803.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}
-	${LINK.cc} -o ${CND_DISTDIR}/libMS5803.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -shared -fPIC
+	${LINK.cc} -o ${CND_DISTDIR}/libMS5803.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -lwiringPi -lpthread -shared -fPIC
 
 ${OBJECTDIR}/_ext/d28afab9/Arduino.o: ../Arduino/Arduino.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9

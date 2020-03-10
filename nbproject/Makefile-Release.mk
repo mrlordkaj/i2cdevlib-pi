@@ -85,7 +85,7 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}
-	${LINK.cc} -o ${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -shared -fPIC
+	${LINK.cc} -o ${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -lwiringPi -lpthread -shared -fPIC
 
 ${OBJECTDIR}/AD7746/AD7746.o: AD7746/AD7746.cpp
 	${MKDIR} -p ${OBJECTDIR}/AD7746

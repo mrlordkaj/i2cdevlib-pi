@@ -61,8 +61,8 @@ build: .build-post
 # Copy all header files
 	[ -d ${CND_DISTDIR}/include ] || mkdir ${CND_DISTDIR}/include
 	[ -d ${CND_DISTDIR}/include/avr ] || mkdir ${CND_DISTDIR}/include/avr
-	cp Arduino/avr/*.h ${CND_DISTDIR}/include/avr
-	cp Arduino/Arduino.h ${CND_DISTDIR}/include
+	#cp Arduino/avr/*.h ${CND_DISTDIR}/include/avr
+	#cp Arduino/*.h ${CND_DISTDIR}/include
 	cp I2Cdev/I2Cdev.h ${CND_DISTDIR}/include
 	cp AD7746/AD7746.h ${CND_DISTDIR}/include
 	cp ADS1115/ADS1115.h ${CND_DISTDIR}/include
@@ -84,7 +84,7 @@ build: .build-post
 	cp MPR121/MPR121.h ${CND_DISTDIR}/include
 	cp MPU6050/MPU6050.h ${CND_DISTDIR}/include
 	cp MPU9150/MPU9150.h ${CND_DISTDIR}/include
-	#cp MS5803/MS5803.h ${CND_DISTDIR}/include
+	cp MS5803/MS5803_I2C.h ${CND_DISTDIR}/include
 	cp SSD1308/SSD1308.h ${CND_DISTDIR}/include
 	cp TCA6424A/TCA6424A.h ${CND_DISTDIR}/include
 

@@ -12,10 +12,12 @@ sudo apt-get install wiringpi -y
 sudo apt-get install freeglut3-dev -y
 
 make
-cd dist
 
-sudo mkdir -p /usr/include/i2cdevlib
-sudo mkdir -p /usr/include/i2cdevlib/avr
-sudo cp include/avr/*.h /usr/include/i2cdevlib/avr
-sudo cp include/*.h /usr/include/i2cdevlib
-sudo cp libi2cdev.so /usr/lib/libi2cdev.so
+sudo mkdir -p /usr/local/include/avr
+sudo cp Arduino/avr/*.h /usr/local/include/avr
+sudo cp Arduino/*.h /usr/local/include
+
+cd dist
+sudo mkdir -p /usr/local/include/i2cdevlib
+sudo cp include/*.h /usr/local/include/i2cdevlib
+sudo cp libi2cdev.so /usr/local/lib/libi2cdev.so
