@@ -30,7 +30,7 @@ $ sudo chmod +x install.sh
 
 $ ./install.sh
 ```
-After script process all done, you got a dynamic library ready in `dist` directory.
+After script process all done, you can use it with your linker `-li2cdev`.
 
 ## Build Demos
 
