@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libITG3200.so
-CND_ARTIFACT_PATH_Release=dist/libITG3200.so
+CND_ARTIFACT_NAME_Release=libitg3200.a
+CND_ARTIFACT_PATH_Release=dist/libitg3200.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libITG3200.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libITG3200.so.tar
+CND_PACKAGE_NAME_Release=ITG3200.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/ITG3200.tar
 # raw configuration
 CND_PLATFORM_raw=GNU-Linux
 CND_ARTIFACT_DIR_raw=demo

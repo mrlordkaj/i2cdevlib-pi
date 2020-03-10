@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libAK8963.so
-CND_ARTIFACT_PATH_Release=dist/libAK8963.so
+CND_ARTIFACT_NAME_Release=libak8963.a
+CND_ARTIFACT_PATH_Release=dist/libak8963.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libAK8963.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libAK8963.so.tar
+CND_PACKAGE_NAME_Release=AK8963.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/AK8963.tar
 #
 # include compiler specific variables
 #

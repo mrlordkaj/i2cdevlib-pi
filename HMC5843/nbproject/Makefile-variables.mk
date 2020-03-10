@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libHMC5843.so
-CND_ARTIFACT_PATH_Release=dist/libHMC5843.so
+CND_ARTIFACT_NAME_Release=libhmc5843.a
+CND_ARTIFACT_PATH_Release=dist/libhmc5843.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libHMC5843.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libHMC5843.so.tar
+CND_PACKAGE_NAME_Release=HMC5843.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/HMC5843.tar
 # raw configuration
 CND_PLATFORM_raw=GNU-Linux
 CND_ARTIFACT_DIR_raw=demo

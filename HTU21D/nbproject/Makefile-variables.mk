@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libHTU21D.so
-CND_ARTIFACT_PATH_Release=dist/libHTU21D.so
+CND_ARTIFACT_NAME_Release=libhtu21d.a
+CND_ARTIFACT_PATH_Release=dist/libhtu21d.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libHTU21D.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libHTU21D.so.tar
+CND_PACKAGE_NAME_Release=HTU21D.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/HTU21D.tar
 # simple configuration
 CND_PLATFORM_simple=GNU-Linux
 CND_ARTIFACT_DIR_simple=demo

@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libAK8975.so
-CND_ARTIFACT_PATH_Release=dist/libAK8975.so
+CND_ARTIFACT_NAME_Release=libak8975.a
+CND_ARTIFACT_PATH_Release=dist/libak8975.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libAK8975.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libAK8975.so.tar
+CND_PACKAGE_NAME_Release=AK8975.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/AK8975.tar
 # raw configuration
 CND_PLATFORM_raw=GNU-Linux
 CND_ARTIFACT_DIR_raw=demo

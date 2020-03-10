@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libIAQ2000.so
-CND_ARTIFACT_PATH_Release=dist/libIAQ2000.so
+CND_ARTIFACT_NAME_Release=libiaq2000.a
+CND_ARTIFACT_PATH_Release=dist/libiaq2000.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libIAQ2000.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libIAQ2000.so.tar
+CND_PACKAGE_NAME_Release=IAQ2000.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/IAQ2000.tar
 # demo configuration
 CND_PLATFORM_demo=GNU-Linux
 CND_ARTIFACT_DIR_demo=demo

@@ -60,36 +60,38 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/libAD7746.${CND_DLIB_EXT}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/libad7746.a
 
-${CND_DISTDIR}/libAD7746.${CND_DLIB_EXT}: ${OBJECTFILES}
+${CND_DISTDIR}/libad7746.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}
-	${LINK.cc} -o ${CND_DISTDIR}/libAD7746.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -lwiringPi -lpthread -shared -fPIC
+	${RM} ${CND_DISTDIR}/libad7746.a
+	${AR} -rv ${CND_DISTDIR}/libad7746.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/libad7746.a
 
 ${OBJECTDIR}/_ext/d28afab9/Arduino.o: ../Arduino/Arduino.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
 
 ${OBJECTDIR}/_ext/d28afab9/Wire.o: ../Arduino/Wire.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
 
 ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o: ../Arduino/avr/dtostrf.c
 	${MKDIR} -p ${OBJECTDIR}/_ext/4ac3ce87
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
 
 ${OBJECTDIR}/_ext/847938aa/I2Cdev.o: ../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
 
 ${OBJECTDIR}/AD7746.o: AD7746.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AD7746.o AD7746.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AD7746.o AD7746.cpp
 
 # Subprojects
 .build-subprojects:

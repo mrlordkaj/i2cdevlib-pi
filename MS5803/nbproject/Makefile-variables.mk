@@ -17,11 +17,11 @@ CND_PACKAGE_PATH_test=dist/test/GNU-Linux/package/ms5803.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libMS5803.so
-CND_ARTIFACT_PATH_Release=dist/libMS5803.so
+CND_ARTIFACT_NAME_Release=libms5803.a
+CND_ARTIFACT_PATH_Release=dist/libms5803.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libMS5803.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libMS5803.so.tar
+CND_PACKAGE_NAME_Release=MS5803.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/MS5803.tar
 #
 # include compiler specific variables
 #

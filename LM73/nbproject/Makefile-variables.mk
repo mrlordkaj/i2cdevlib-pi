@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libLM73.so
-CND_ARTIFACT_PATH_Release=dist/libLM73.so
+CND_ARTIFACT_NAME_Release=liblm73.a
+CND_ARTIFACT_PATH_Release=dist/liblm73.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libLM73.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libLM73.so.tar
+CND_PACKAGE_NAME_Release=LM73.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/LM73.tar
 #
 # include compiler specific variables
 #

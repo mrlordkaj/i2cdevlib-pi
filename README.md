@@ -30,7 +30,7 @@ $ chmod +x install.sh
 
 $ ./install.sh
 ```
-After script process all done, you can use the library with your linker `-li2cdev`.
+After script process all done, you can use the library with your linker `-li2cdev -lwiringPi -lpthread`.
 
 ## Build Demos
 

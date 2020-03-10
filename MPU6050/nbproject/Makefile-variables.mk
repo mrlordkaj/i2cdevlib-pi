@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libMPU6050.so
-CND_ARTIFACT_PATH_Release=dist/libMPU6050.so
+CND_ARTIFACT_NAME_Release=libmpu6050.a
+CND_ARTIFACT_PATH_Release=dist/libmpu6050.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libMPU6050.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libMPU6050.so.tar
+CND_PACKAGE_NAME_Release=MPU6050.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/MPU6050.tar
 # raw configuration
 CND_PLATFORM_raw=GNU-Linux
 CND_ARTIFACT_DIR_raw=demo

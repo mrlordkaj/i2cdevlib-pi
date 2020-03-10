@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libLSM303DLHC.so
-CND_ARTIFACT_PATH_Release=dist/libLSM303DLHC.so
+CND_ARTIFACT_NAME_Release=liblsm303dlhc.a
+CND_ARTIFACT_PATH_Release=dist/liblsm303dlhc.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libLSM303DLHC.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libLSM303DLHC.so.tar
+CND_PACKAGE_NAME_Release=LSM303DLHC.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/LSM303DLHC.tar
 # test configuration
 CND_PLATFORM_test=GNU-Linux
 CND_ARTIFACT_DIR_test=demo

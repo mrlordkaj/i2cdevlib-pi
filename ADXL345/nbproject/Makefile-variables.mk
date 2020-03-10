@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libADXL345.so
-CND_ARTIFACT_PATH_Release=dist/libADXL345.so
+CND_ARTIFACT_NAME_Release=libadxl345.a
+CND_ARTIFACT_PATH_Release=dist/libadxl345.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libADXL345.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libADXL345.so.tar
+CND_PACKAGE_NAME_Release=ADXL345.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/ADXL345.tar
 # raw configuration
 CND_PLATFORM_raw=GNU-Linux
 CND_ARTIFACT_DIR_raw=demo

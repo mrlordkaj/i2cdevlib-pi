@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libL3GD20H.so
-CND_ARTIFACT_PATH_Release=dist/libL3GD20H.so
+CND_ARTIFACT_NAME_Release=libl3gd20h.a
+CND_ARTIFACT_PATH_Release=dist/libl3gd20h.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libL3GD20H.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libL3GD20H.so.tar
+CND_PACKAGE_NAME_Release=L3GD20H.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/L3GD20H.tar
 # basic configuration
 CND_PLATFORM_basic=GNU-Linux
 CND_ARTIFACT_DIR_basic=demo

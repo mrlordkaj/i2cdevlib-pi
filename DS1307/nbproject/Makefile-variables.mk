@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libDS1307.so
-CND_ARTIFACT_PATH_Release=dist/libDS1307.so
+CND_ARTIFACT_NAME_Release=libds1307.a
+CND_ARTIFACT_PATH_Release=dist/libds1307.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libDS1307.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libDS1307.so.tar
+CND_PACKAGE_NAME_Release=DS1307.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/DS1307.tar
 # tick configuration
 CND_PLATFORM_tick=GNU-Linux
 CND_ARTIFACT_DIR_tick=demo

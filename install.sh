@@ -17,7 +17,6 @@ sudo mkdir -p /usr/local/include/avr
 sudo cp Arduino/avr/*.h /usr/local/include/avr
 sudo cp Arduino/*.h /usr/local/include
 
-cd dist
 sudo mkdir -p /usr/local/include/i2cdevlib
 sudo cp I2Cdev/I2Cdev.h /usr/local/include/i2cdevlib
 sudo cp AD7746/AD7746.h /usr/local/include/i2cdevlib

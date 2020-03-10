@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libADS1115.so
-CND_ARTIFACT_PATH_Release=dist/libADS1115.so
+CND_ARTIFACT_NAME_Release=libads1115.a
+CND_ARTIFACT_PATH_Release=dist/libads1115.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=libADS1115.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libADS1115.so.tar
+CND_PACKAGE_NAME_Release=ADS1115.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/ADS1115.tar
 # single configuration
 CND_PLATFORM_single=GNU-Linux
 CND_ARTIFACT_DIR_single=demo
