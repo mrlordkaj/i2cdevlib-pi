@@ -26,7 +26,7 @@
 
 #include "Teapot.h"
 #include "Wire.h"
-#include <math.h>
+#include <cmath>
 
 int boxFaces[] = {
     0,1,2,3, // front
