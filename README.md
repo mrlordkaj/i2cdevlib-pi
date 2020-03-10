@@ -18,29 +18,19 @@ I only tested on my devices. The testing progress are reported at [Supported Dev
 
 ## Installation
 
-First check that wiringPi is not already installed. In a terminal, run:
-```
-$ gpio -v
-```
-If you get something, then you have it already installed. Otherwise, you must run:
-```
-$ sudo apt-get update
+Since I made an install bash script, you simply run it to install.
 
-$ sudo apt-get install wiringpi
-```
-Clone our source code then build it:
+Clone our source code then install it:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
 $ cd i2cdevlib-pi
 
-$ make
+$ sudo chmod +x install.sh
+
+$ ./install.sh
 ```
-After `make` process all done, you got a dynamic library ready in `dist` directory:
-```
-$ cd dist
-```
-That's all, you just link `libi2cdev.so` into your project, and use relevant header files in `include` directory.
+After script process all done, you got a dynamic library ready in `dist` directory.
 
 ## Build Demos
 
