@@ -1,4 +1,8 @@
 # NetBeans IDE
-**/nbproject/private/
 **/build/
+**/demo/
 **/dist/
+**/nbproject/private/
+**/nbproject/*.bash
+**/nbproject/*.properties
+**/nbproject/*.xml

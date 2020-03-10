@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-#ifdef MPU6050_TEAPOT
+#ifdef DEMO_TEAPOT
 
 #include "Teapot.h"
 #include "Wire.h"

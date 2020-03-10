@@ -113,3 +113,7 @@ void _Serial::println(long val, int format) {
     print(val, format);
     std::cout << "\r\n" << std::flush;
 }
+
+void _Serial::println() {
+    std::cout << "\r\n" << std::flush;
+}

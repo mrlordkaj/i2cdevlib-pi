@@ -117,6 +117,7 @@ public:
     void write(char val);
     void print(long val, int format);
     void println(long val, int format);
+    void println();
     
     template<typename T> void write(T* val, int count) {
         for (int i = 0; i < count; i++) {
