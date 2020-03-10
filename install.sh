@@ -42,4 +42,4 @@ sudo cp MPU9150/MPU9150.h /usr/local/include/i2cdevlib
 sudo cp MS5803/MS5803_I2C.h /usr/local/include/i2cdevlib
 sudo cp SSD1308/SSD1308.h /usr/local/include/i2cdevlib
 sudo cp TCA6424A/TCA6424A.h /usr/local/include/i2cdevlib
-sudo cp libi2cdev.a /usr/local/lib/libi2cdev.a
+sudo cp dist/libi2cdev.a /usr/local/lib/libi2cdev.a
