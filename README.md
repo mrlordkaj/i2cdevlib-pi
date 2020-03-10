@@ -26,7 +26,7 @@ $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
 $ cd i2cdevlib-pi
 
-$ sudo chmod +x install.sh
+$ chmod +x install.sh
 
 $ ./install.sh
 ```
