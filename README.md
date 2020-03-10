@@ -11,9 +11,10 @@ Copyright 2019 Thinh Pham (wrapper and some of demos).
 
 My effort is wrap whole of Jeff Rowberg's `i2cdevlib` from Arduino to run on RaspberryPi without (or minimum) tweaks of his code.
 Therefore, we will gain benefits of further update from the original project.
+
 I also made a simulation of Arduino `Serial` on linux `stdio` for easier debugging, and rewritten some of 3D demos.
 
-All contribution of coding or testing device are welcome.
+All contribution of coding or testing devices are welcome.
 
 ## Installation
 
@@ -25,37 +26,58 @@ $ gpio -v
 ```
 If you get something, then you have it already installed. Otherwise, you must run:
 ```
-# sudo apt-get install wiringpi
-```
-That enough for most of our raw and dump demos.
-In order to run 3D demos, you need an additional OpenGL library:
-```
-# sudo apt-get install freeglut3-dev
-```
+$ sudo apt-get update
 
-### Build MPU6050 Demos
-
-Clone our source code:
+$ sudo apt-get install wiringpi
+```
+Clone our source code then build it:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
-$ cd i2cdevlib-pi/MPU6050
-```
-You have 3 types of demostration of your choice:
-- `$ make CONF=raw` will builds `raw` demo.
-- `$ make CONF=dmp6` will builds `dmp6` demo.
-- `$ make CONF=teapot` will builds `teapot` demo.
+$ cd i2cdevlib-pi
 
-After `make` process all done. Demo applications will be placed in `demo` directory:
+$ make
 ```
-$ cd demo
+After `make` process all done, you got a dynamic library ready in `dist` directory:
 ```
-Now you can run your demo depends on your built:
-- `$ ./raw` displays raw gyro and accel values.
-- `$ ./dmp6` displays dump data. Tweak `MPU6050_DMP6.ino` to enable different output data.
-- `$ ./teapot` displays a 3D demo application.
+$ cd dist
+```
+That's all, you just link `libi2cdev.so` into your project, and use relevant header files in `include` directory.
+
+### Build Demos
+
+Most of raw and dump demos does not need any addition dependencies. But, in order to build 3D application, you need an additional library:
+```
+$ sudo apt-get update
+
+$ sudo apt-get install freeglut3-dev
+```
+
+We have many of demostrations depends on each device. Here, I guide you to build `MPU6050`'s `teapot` demo, all other demo can be built by the same way.
+
+First, make sure you are working on the root directory of the project.
+
+Then, enter `MPU6050` directory:
+```
+$ cd MPU6050
+```
+
+Refer to the Supported devices table below, you will see the `MPU6050` have 3 types of demo, they are `raw`, `dmp6`, and `teapot`. In example, to build all of them, you just run `make` command with specified demo name:
+```
+$ make CONF=raw
+
+$ make CONF=dmp6
+
+$ make CONF=teapot
+```
+
+After `make` process all done, your demo application will ready in `demo` directory, you can run it now:
+```
+$ ./demo/teapot
+```
 
 ## Supported devices
+
 | Device | Build Status | Tested | Demos |
 | --- | --- | --- | --- |
 | AD7746 | Passed | No | - |
