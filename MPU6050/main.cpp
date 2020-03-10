@@ -35,7 +35,7 @@
 int main(int argc, char *argv[]) {
     wiringPiSetup();
     
-#ifdef MPU6050_TEAPOT
+#ifdef DEMO_TEAPOT
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH | GLUT_STENCIL);
     glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
