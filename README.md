@@ -14,11 +14,9 @@ Therefore, we will gain benefits of further update from the original project.
 
 I also made a simulation of Arduino `Serial` on linux `stdio` for easier debugging, and rewritten some of 3D demos.
 
-All contribution of coding or testing devices are welcome.
+I only tested on my devices. The testing progress are reported at [Supported Devices](#supported-devices) table. All contribution of coding or testing devices are welcome.
 
 ## Installation
-
-### Install Dependencies
 
 First check that wiringPi is not already installed. In a terminal, run:
 ```
@@ -44,7 +42,7 @@ $ cd dist
 ```
 That's all, you just link `libi2cdev.so` into your project, and use relevant header files in `include` directory.
 
-### Build Demos
+## Build Demos
 
 Most of raw and dump demos does not need any addition dependencies. But, in order to build 3D application, you need an additional library:
 ```
@@ -53,7 +51,7 @@ $ sudo apt-get update
 $ sudo apt-get install freeglut3-dev
 ```
 
-We have many of demostrations depends on each device. Here, I guide you to build `MPU6050`'s `teapot` demo, all other demo can be built by the same way.
+We have many of demostrations depends on each device. Here, I guide you to build `MPU6050`'s demos (all other demo can be built by the same way).
 
 First, make sure you are working on the root directory of the project.
 
@@ -62,7 +60,7 @@ Then, enter `MPU6050` directory:
 $ cd MPU6050
 ```
 
-Refer to the Supported devices table below, you will see the `MPU6050` have 3 types of demo, they are `raw`, `dmp6`, and `teapot`. In example, to build all of them, you just run `make` command with specified demo name:
+Refer to the [Supported Devices](#supported-devices) table below, you will see the `MPU6050` have 3 types of demo, they are `raw`, `dmp6`, and `teapot`. In example, to build all of them, you just run `make` command with specified demo name:
 ```
 $ make CONF=raw
 
@@ -76,7 +74,7 @@ After `make` process all done, your demo application will ready in `demo` direct
 $ ./demo/teapot
 ```
 
-## Supported devices
+## Supported Devices
 
 | Device | Build Status | Tested | Demos |
 | --- | --- | --- | --- |
