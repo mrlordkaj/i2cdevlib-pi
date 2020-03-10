@@ -12,6 +12,7 @@ sudo apt-get install wiringpi -y
 sudo apt-get install freeglut3-dev -y
 
 make
+cd dist
 
 sudo cp libi2cdev.so /usr/lib/libi2cdev.so
 sudo mkdir -p /usr/include/i2cdevlib
