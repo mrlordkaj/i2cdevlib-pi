@@ -88,7 +88,6 @@ void TwoWire::beginTransmission(int address) {
 
 /**
  * Sends written buffer to the bus.
- * @param sendStop: should send stop signal at the end.
  * @return  0 .. success
  *          1 .. buffer too long
  *          2 .. address send, NACK received
@@ -115,18 +114,6 @@ uint8_t TwoWire::endTransmission() {
     return endTransmission(true);
 }
 
-size_t TwoWire::write(uint8_t data) {
-    if (addr > 0) {
-        if (writeOffset < BUFFER_LENGTH-1) {
-            writeBuffer[writeOffset] = data;
-            writeOffset++;
-            return 1;
-        }
-        return 0;
-    }
-    return -1;
-}
-
 size_t TwoWire::write(const uint8_t *data, size_t quantity) {
     if (addr > 0) {
         quantity = min(BUFFER_LENGTH-writeOffset, (int)quantity);
@@ -140,8 +127,31 @@ size_t TwoWire::write(const uint8_t *data, size_t quantity) {
     return -1;
 }
 
+size_t TwoWire::write(uint8_t data) {
+    return write(&data, 1);
+}
+
+/**
+ * Reads data from the bus to buffer.
+ * @return read length or -1.
+ */
 uint8_t TwoWire::requestFrom(uint8_t address, uint8_t quantity, uint32_t iaddress, uint8_t isize, uint8_t sendStop) {
-    // TODO: iaddress, isize, sendStop
+    // TODO: sendStop
+    
+    if (isize > 0) {
+        // send internal address
+        beginTransmission(address);
+        // the maximum size of internal address is 3 bytes
+        if (isize > 3){
+            isize = 3;
+        }
+        // write internal register address - most significant byte first
+        while (isize-- > 0)
+            write((uint8_t)(iaddress >> (isize*8)));
+        endTransmission(false);
+    }
+    
+    // send data
     beginTransmission(address);
     if (addr > 0) {
         if (quantity > BUFFER_LENGTH) {
@@ -170,10 +180,17 @@ uint8_t TwoWire::requestFrom(int address, int quantity, int sendStop) {
     return requestFrom((uint8_t)address, (uint8_t)quantity, (uint8_t)sendStop);
 }
 
+/**
+ * Gets data length available to read.
+ */
 int TwoWire::available() {
     return readAvailable > 0 ? readAvailable : 0;
 }
 
+/**
+ * Reads next byte in buffer.
+ * @return next byte value or -1.
+ */
 int TwoWire::read() {
     if (readAvailable > 0) {
         uint8_t d = readBuffer[readOffset];
@@ -184,6 +201,10 @@ int TwoWire::read() {
     return -1;
 }
 
+/**
+ * Reads next byte in buffer but not increase index.
+ * @return next byte value or -1.
+ */
 int TwoWire::peek() {
     if (readAvailable > 0) {
         return readBuffer[readOffset];

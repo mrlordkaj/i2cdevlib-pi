@@ -944,7 +944,7 @@ uint16_t I2Cdev::readTimeout = I2CDEV_DEFAULT_READ_TIMEOUT;
     
     */
     
-    uint8_t TwoWire::rxBuffer[NBWIRE_BUFFER_LENGTH];
+    uint8_t TwoWire::readBuffer[NBWIRE_BUFFER_LENGTH];
     uint8_t TwoWire::rxBufferIndex = 0;
     uint8_t TwoWire::rxBufferLength = 0;
     
