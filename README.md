@@ -18,9 +18,7 @@ I only tested on my devices. The testing progress are reported at [Supported Dev
 
 ## Installation
 
-Since I made an install bash script, you simply run it to install.
-
-Clone our source code then install it:
+Since I made an install bash script, you simply run it once for all:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 

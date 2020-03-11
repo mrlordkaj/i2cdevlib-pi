@@ -22,7 +22,10 @@
  * THE SOFTWARE.
  */
 
-#include <wiringPiI2C.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <linux/i2c-dev.h>
+#include <wiringPi.h>
 #include <unistd.h>
 #include "Wire.h"
 
@@ -37,11 +40,24 @@ static inline ssize_t i2cRead(int __fd, void *__buf, size_t __nbytes) __wur {
 }
 
 void TwoWire::begin() {
-    
+    if (fd < 0) {
+        int rev = piGpioLayout();
+        const char *device = (rev == 1) ? "/dev/i2c-0" : "/dev/i2c-1";
+        if ((fd = open(device, O_RDWR)) < 0) {
+            std::cerr << "Failed to open I2C port: " << strerror(errno) << "\r\n" << std::flush;
+        }
+    }
 }
 
 void TwoWire::begin(uint8_t address) {
-    beginTransmission(address);
+    begin();
+    if (address != addr) {
+        addr = address;
+        if (fd < 0 || ioctl(fd, I2C_SLAVE, address) < 0) {
+            std::cerr << "Failed to open I2C device: " << strerror(errno) << "\r\n" << std::flush;
+            addr = 0;
+        }
+    }
 }
 
 void TwoWire::begin(int address) {
@@ -49,22 +65,19 @@ void TwoWire::begin(int address) {
 }
 
 void TwoWire::end() {
-    if (addr > 0) {
+    if (fd >= 0) {
         close(fd);
-        addr = fd = 0;
+        fd = -1;
     }
+    addr = 0;
 }
 
 void TwoWire::setClock(uint32_t clock) {
-    std::cerr << "Warning: You need set I2C clock in \"/boot/config.txt\" manually.\r\n" << std::flush;
+    std::cerr << "Warning: You need set I2C clock manually.\r\n" << std::flush;
 }
 
 void TwoWire::beginTransmission(uint8_t address) {
-    if (address != addr) {
-        end(); // close previous device
-        addr = address;
-        fd = wiringPiI2CSetup(address);
-    }
+    begin(address);
     readOffset = 0;
     writeOffset = 0;
 }
@@ -73,17 +86,29 @@ void TwoWire::beginTransmission(int address) {
     beginTransmission((uint8_t)address);
 }
 
+/**
+ * Sends written buffer to the bus.
+ * @param sendStop: should send stop signal at the end.
+ * @return  0 .. success
+ *          1 .. buffer too long
+ *          2 .. address send, NACK received
+ *          3 .. data send, NACK received
+ *          4 .. other error
+ */
 uint8_t TwoWire::endTransmission(bool sendStop) {
     // TODO: sendStop
-    if (addr > 0) {
+    if (addr > 0 && fd >= 0) {
         if (writeOffset > 0) {
-            return i2cWrite(fd, &writeBuffer, writeOffset);
-        } else if (readOffset > 0) {
-            return readOffset;
+            int written = i2cWrite(fd, &writeBuffer, writeOffset);
+            if (written < 0) {
+                return 2; // address send, NACK received
+            } else if (written < writeOffset) {
+                return 3; // data send, NACK received
+            }
         }
-        return 0;
+        return 0; // success
     }
-    return -1;
+    return 4; // other error
 }
 
 uint8_t TwoWire::endTransmission() {

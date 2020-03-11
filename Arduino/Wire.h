@@ -34,17 +34,6 @@
 #define BUFFER_LENGTH 32
 
 class TwoWire {
-private:
-    uint8_t addr = 0;
-    int fd = 0;
-    // read stuff
-    uint8_t readBuffer[BUFFER_LENGTH];
-    int readAvailable = 0;
-    int readOffset = 0;
-    // write stuff
-    uint8_t writeBuffer[BUFFER_LENGTH];
-    int writeOffset = 0;
-    
 public:
     void begin();
     void begin(uint8_t);
@@ -73,6 +62,17 @@ public:
     inline size_t write(long n) { return write((uint8_t)n); }
     inline size_t write(unsigned int n) { return write((uint8_t)n); }
     inline size_t write(int n) { return write((uint8_t)n); }
+    
+private:
+    uint8_t addr = 0;
+    int fd = -1;
+    // read stuff
+    uint8_t readBuffer[BUFFER_LENGTH];
+    int readAvailable = 0;
+    int readOffset = 0;
+    // write stuff
+    uint8_t writeBuffer[BUFFER_LENGTH];
+    int writeOffset = 0;
 };
 
 extern TwoWire Wire;
