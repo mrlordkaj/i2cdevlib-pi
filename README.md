@@ -33,23 +33,54 @@ $ ./install
 ```
 After script process all done, you can use the library with your linker `-li2cdev`.
 
+## Getting Started
+
+Now we write our first app to show raw data of `MPU6050` device. Create new file with name `mpu_raw.cpp` and write its code:
+```c++
+#include <unistd.h>
+#include <Arduino.h>
+#include <i2cdevlib/MPU6050.h>
+
+int main() {
+    int16_t ax, ay, az; // store accelerometer data
+    int16_t gx, gy, gz; // store gyroscope data
+    MPU6050 mpu;
+    mpu.initialize();
+    if (mpu.testConnection()) { // test sensor connection
+        while (true) {
+            mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz); // get raw data
+            printf("a/g: ");
+            printf("%6d %6d %6d / ", ax, ay, az);
+            printf("%6d %6d %6d\r\n", gx, gy, gz);
+            fflush(stdout); // force show new line
+            sleep(1); // sleep 1 second
+        }
+    } else {
+        fprintf(stderr, "MPU6050 connection failed");
+        return 1;
+    }
+    return 0;
+}
+```
+
+Connect your device, build it, and run it:
+```
+$ g++ mpu_raw.cpp -o mpu_raw -li2cdev
+
+$ ./mpu_raw
+
+```
+
 ## Build Demos
 
-Most of raw and dump demos does not need any addition dependencies. But, in order to build 3D application, you need an additional library:
-```
-$ sudo apt-get update
-
-$ sudo apt-get install freeglut3-dev
-```
-
-We have many of demostrations depends on each device. Here, I guide you to build `MPU6050`'s demos (all other demo can be built by the same way).
+Most of devices come with various demos. This section guides you to build `MPU6050`'s demos (all other demo can be built by the same way).
 
 Make sure you are working on the root directory of the project, then enter `MPU6050` directory:
 ```
 $ cd MPU6050
 ```
 
-Refer to the [Supported Devices](#supported-devices) table below, you will see the `MPU6050` have 3 types of demo, they are `raw`, `dmp6`, and `teapot`. In example, to build all of them, you just run `make` command with specified demo name:
+Head to the [Supported Devices](#supported-devices) table below, you will see the `MPU6050` have 3 types of demo, they are `raw`, `dmp6`, and `teapot`. In example, to build all of them, you just run `make` command with specified demo name:
 ```
 $ make CONF=raw
 
