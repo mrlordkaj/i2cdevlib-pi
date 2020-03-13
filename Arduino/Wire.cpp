@@ -116,7 +116,7 @@ uint8_t TwoWire::endTransmission() {
 
 size_t TwoWire::write(const uint8_t *data, size_t quantity) {
     if (addr > 0) {
-        quantity = min(BUFFER_LENGTH-writeOffset, (int)quantity);
+        quantity = min(BUFFER_LENGTH-writeOffset, quantity);
         if (quantity > 0) {
             memcpy(writeBuffer+writeOffset, data, quantity);
             writeOffset += quantity;

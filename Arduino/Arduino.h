@@ -37,6 +37,8 @@
 #include <iostream>
 #include <cmath>
 #include <cstring>
+#include <thread>
+#include <bitset>
 
 // ================================================================
 // ===                  ARDUINO PREDEFINITIONS                  ===
@@ -72,26 +74,14 @@
 // ===                ARDUINO MACROS SIMULATION                 ===
 // ================================================================
 
-//#define min(a,b) ((a)<(b)?(a):(b))
-//#define max(a,b) ((a)>(b)?(a):(b))
-//#define abs(x) ((x)>0?(x):-(x))
-//#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
-//#define round(x)     ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
-//#define radians(deg) ((deg)*DEG_TO_RAD)
-//#define degrees(rad) ((rad)*RAD_TO_DEG)
-//#define sq(x) ((x)*(x))
-
-template<typename T> T min(T a, T b) {
-    return a < b ? a : b;
-}
-
-template<typename T> T max(T a, T b) {
-    return a > b ? a : b;
-}
-
-template<typename T> T abs(T x) {
-    return x > 0 ? x : -x;
-}
+#define min(a,b) ((a)<(b)?(a):(b))
+#define max(a,b) ((a)>(b)?(a):(b))
+#define abs(x) ((x)>0?(x):-(x))
+#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
+#define round(x)     ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
+#define radians(deg) ((deg)*DEG_TO_RAD)
+#define degrees(rad) ((rad)*RAD_TO_DEG)
+#define sq(x) ((x)*(x))
 
 long map(long x, long in_min, long in_max, long out_min, long out_max);
 

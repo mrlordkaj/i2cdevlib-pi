@@ -23,9 +23,6 @@
  */
 
 #include "Arduino.h"
-#include "Wire.h"
-#include <bitset>
-#include <thread>
 
 // ================================================================
 // ===            ARDUINO CORE FUNCTIONS SIMULATION             ===
