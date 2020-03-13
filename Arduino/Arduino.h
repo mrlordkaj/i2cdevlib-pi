@@ -31,14 +31,14 @@
 
 #include <wiringPi.h>
 #include <inttypes.h>
+#include <cmath>
+#include <thread>
+#include <bitset>
 #include "avr/pgmspace.h"
 #include "avr/dtostrf.h"
 
 #include <iostream>
-#include <cmath>
 #include <cstring>
-#include <thread>
-#include <bitset>
 
 // ================================================================
 // ===                  ARDUINO PREDEFINITIONS                  ===

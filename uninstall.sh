@@ -13,4 +13,4 @@ sudo rm Arduino.h
 sudo rm Wire.h
 
 cd /usr/local/lib
-sudo rm libi2cdev.a
+sudo rm libi2cdev.so
