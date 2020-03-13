@@ -44,9 +44,7 @@ $ sudo apt-get install freeglut3-dev
 
 We have many of demostrations depends on each device. Here, I guide you to build `MPU6050`'s demos (all other demo can be built by the same way).
 
-First, make sure you are working on the root directory of the project.
-
-Then, enter `MPU6050` directory:
+Make sure you are working on the root directory of the project, then enter `MPU6050` directory:
 ```
 $ cd MPU6050
 ```
