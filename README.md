@@ -1,20 +1,23 @@
 # i2cdevlib-pi
 
-This is a forked version of `i2cdevlib`. Which ported in hope to runs smoothly on RaspberryPi devices.
-It inherits [The MIT license](LICENSE) from original project.
-
-Copyright 2012 Jeff Rowberg (i2cdevlib).
-
-Copyright 2019 Thinh Pham (wrapper and some of demos).
-
-## What I did
+The I2C Device Library (i2cdevlib) is a collection of uniform and well-documented classes to provide simple
+and intuitive interfaces to I2C devices, made by Jeff Rowberg.
 
 My effort is wrap whole of Jeff Rowberg's `i2cdevlib` from Arduino to run on RaspberryPi without (or minimum) tweaks of his code.
 Therefore, we will gain benefits of further update from the original project.
 
 I also made a simulation of Arduino `Serial` on linux `stdio` for easier debugging, and rewritten some of 3D demos.
 
-I only tested on my devices. The testing progress are reported at [Supported Devices](#supported-devices) table. All contribution of coding or testing devices are welcome.
+I only tested on devices I already have. The testing progress are reported at [Supported Devices](#supported-devices) table.
+All contribution of coding or testing devices are welcome.
+
+## Copyright
+
+This project inherits [The MIT license](LICENSE) from original project.
+
+Copyright 2012 Jeff Rowberg (i2cdevlib).
+
+Copyright 2019 Thinh Pham (wrapper and some of demos).
 
 ## Installation
 
@@ -24,11 +27,11 @@ $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
 $ cd i2cdevlib-pi
 
-$ chmod +x install.sh
+$ make install
 
-$ ./install.sh
+$ ./install
 ```
-After script process all done, you can use the library with your linker `-li2cdev -lwiringPi -lpthread`.
+After script process all done, you can use the library with your linker `-li2cdev`.
 
 ## Build Demos
 
