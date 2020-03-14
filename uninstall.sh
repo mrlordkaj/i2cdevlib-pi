@@ -1,16 +1,7 @@
 #!/bin/sh
 
-cd /usr/include/avr
-sudo rm *.h
-
-cd /usr/include/i2cdevlib
-sudo rm *.h
-
-cd /usr/include
-sudo rm -d avr
-sudo rm -d i2cdevlib
-sudo rm Arduino.h
-sudo rm Wire.h
-
-cd /usr/lib
-sudo rm libi2cdev.so
+sudo rm -r /usr/include/avr
+sudo rm -r /usr/include/i2cdevlib
+sudo rm /usr/include/Arduino.h
+sudo rm /usr/include/Wire.h
+sudo rm /usr/lib/libi2cdev.so

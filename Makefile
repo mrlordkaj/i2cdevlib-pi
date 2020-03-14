@@ -58,6 +58,37 @@ build: .build-post
 
 .build-post: .build-impl
 # Add your post 'build' code here...
+	[ -d ${CND_DISTDIR}/include ] || mkdir ${CND_DISTDIR}/include
+	cp Arduino/*.h ${CND_DISTDIR}/include
+	
+	[ -d ${CND_DISTDIR}/include/avr ] || mkdir ${CND_DISTDIR}/include/avr
+	cp Arduino/avr/*.h ${CND_DISTDIR}/include/avr
+	
+	[ -d ${CND_DISTDIR}/include/i2cdevlib ] || mkdir ${CND_DISTDIR}/include/i2cdevlib
+	cp I2Cdev/I2Cdev.h ${CND_DISTDIR}/include/i2cdevlib
+	cp AD7746/AD7746.h ${CND_DISTDIR}/include/i2cdevlib
+	cp ADS1115/ADS1115.h ${CND_DISTDIR}/include/i2cdevlib
+	cp ADXL345/ADXL345.h ${CND_DISTDIR}/include/i2cdevlib
+	cp AK8963/AK8963.h ${CND_DISTDIR}/include/i2cdevlib
+	cp AK8975/AK8975.h ${CND_DISTDIR}/include/i2cdevlib
+	cp BMA150/BMA150.h ${CND_DISTDIR}/include/i2cdevlib
+	cp BMP085/BMP085.h ${CND_DISTDIR}/include/i2cdevlib
+	cp DS1307/DS1307.h ${CND_DISTDIR}/include/i2cdevlib
+	cp HMC5843/HMC5843.h ${CND_DISTDIR}/include/i2cdevlib
+	cp HMC5883L/HMC5883L.h ${CND_DISTDIR}/include/i2cdevlib
+	cp HTU21D/HTU21D.h ${CND_DISTDIR}/include/i2cdevlib
+	cp IAQ2000/IAQ2000.h ${CND_DISTDIR}/include/i2cdevlib
+	cp ITG3200/ITG3200.h ${CND_DISTDIR}/include/i2cdevlib
+	cp L3G4200D/L3G4200D.h ${CND_DISTDIR}/include/i2cdevlib
+	cp L3GD20H/L3GD20H.h ${CND_DISTDIR}/include/i2cdevlib
+	cp LM73/LM73.h ${CND_DISTDIR}/include/i2cdevlib
+	cp LSM303DLHC/LSM303DLHC.h ${CND_DISTDIR}/include/i2cdevlib
+	cp MPR121/MPR121.h ${CND_DISTDIR}/include/i2cdevlib
+	cp MPU6050/MPU6050.h ${CND_DISTDIR}/include/i2cdevlib
+	cp MPU9150/MPU9150.h ${CND_DISTDIR}/include/i2cdevlib
+	#cp MS5803/MS5803_I2C.h ${CND_DISTDIR}/include/i2cdevlib
+	cp SSD1308/SSD1308.h ${CND_DISTDIR}/include/i2cdevlib
+	cp TCA6424A/TCA6424A.h ${CND_DISTDIR}/include/i2cdevlib
 
 # clean
 clean: .clean-post

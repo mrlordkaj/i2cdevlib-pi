@@ -81,11 +81,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/lib/libi2cdev.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT}: ${OBJECTFILES}
-	${MKDIR} -p ${CND_DISTDIR}
-	${LINK.cc} -o ${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -shared -fPIC
+${CND_DISTDIR}/lib/libi2cdev.${CND_DLIB_EXT}: ${OBJECTFILES}
+	${MKDIR} -p ${CND_DISTDIR}/lib
+	${LINK.cc} -o ${CND_DISTDIR}/lib/libi2cdev.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -shared -fPIC
 
 ${OBJECTDIR}/AD7746/AD7746.o: AD7746/AD7746.cpp
 	${MKDIR} -p ${OBJECTDIR}/AD7746
