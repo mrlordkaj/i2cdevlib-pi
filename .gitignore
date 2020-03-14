@@ -6,3 +6,4 @@
 **/nbproject/*.bash
 **/nbproject/*.properties
 **/nbproject/*.xml
+**/.dep.inc

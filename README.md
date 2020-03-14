@@ -15,7 +15,7 @@ This project inherits [The MIT license](LICENSE) from original project.
 
 Copyright 2012 Jeff Rowberg (i2cdevlib).
 
-Copyright 2019 Thinh Pham (wrapper and some of demos).
+Copyright 2019 Thinh Pham (wrapper).
 
 ## Installation
 
@@ -25,9 +25,7 @@ $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
 $ cd i2cdevlib-pi
 
-$ make install
-
-$ ./install
+$ ./install.sh
 ```
 After script process all done, you can use the library with your linker `-li2cdev`.
 
