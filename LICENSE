@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2012 Jeff Rowberg
+Copyright (c) 2012 Jeff Rowberg (i2cdevlib)
+Copyright (c) 2019 Thinh Pham (wrapper)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

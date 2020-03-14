@@ -62,48 +62,46 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/libmpu6050.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/libMPU6050.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/libmpu6050.a: ${OBJECTFILES}
+${CND_DISTDIR}/libMPU6050.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}
-	${RM} ${CND_DISTDIR}/libmpu6050.a
-	${AR} -rv ${CND_DISTDIR}/libmpu6050.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/libmpu6050.a
+	${LINK.cc} -o ${CND_DISTDIR}/libMPU6050.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -shared -fPIC
 
 ${OBJECTDIR}/_ext/d28afab9/Arduino.o: ../Arduino/Arduino.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
 
 ${OBJECTDIR}/_ext/d28afab9/Wire.o: ../Arduino/Wire.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
 
 ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o: ../Arduino/avr/dtostrf.c
 	${MKDIR} -p ${OBJECTDIR}/_ext/4ac3ce87
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
+	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
 
 ${OBJECTDIR}/_ext/847938aa/I2Cdev.o: ../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
 
 ${OBJECTDIR}/MPU6050.o: MPU6050.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MPU6050.o MPU6050.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MPU6050.o MPU6050.cpp
 
 ${OBJECTDIR}/Teapot.o: Teapot.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Teapot.o Teapot.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Teapot.o Teapot.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -DRELEASE -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

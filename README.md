@@ -3,10 +3,8 @@
 The I2C Device Library (i2cdevlib) is a collection of uniform and well-documented classes to provide simple
 and intuitive interfaces to I2C devices, made by Jeff Rowberg.
 
-My effort is make a simulation of ArduinoCore to run the library on RaspberryPi without (or minimum) tweaks of his code.
+My effort is make a simulation of Arduino to run the library on RaspberryPi without (or minimum) tweaks of his code.
 Therefore, we will gain benefits of further update from the original project.
-
-I also redirect Arduino `Serial` to GNU `stdio` for easier debugging, and rewritten some of 3D demos.
 
 The library only tested on devices I already have. Testing progress are reported at [Supported Devices](#supported-devices) table.
 All contribution of coding or testing devices are welcome.
@@ -35,15 +33,20 @@ After script process all done, you can use the library with your linker `-li2cde
 
 ## Getting Started
 
-Now we write our first app to show raw data of `MPU6050` device. Create new file with name `mpu_raw.cpp` and write its code:
+Let's write first app which shows raw data of `MPU6050` device.
+
+Connect your MPU6050 device to the Raspberry Pi board:
+![MPU6050 connected to Raspberry Pi](https://www.electronicwings.com/public/images/user_images/images/Raspberry%20Pi/RaspberryPi_Interface/RaspberryPi_MPU6050/MPU6050_interface_with_Raspberry%20Pi.png)
+
+Create new file named `mpu_raw.cpp` and write its code:
 ```c++
-#include <unistd.h>
-#include <Arduino.h>
+#include <unistd.h> // standard libs
+#include <Arduino.h> // abstract layer
 #include <i2cdevlib/MPU6050.h>
 
 int main() {
-    int16_t ax, ay, az; // store accelerometer data
-    int16_t gx, gy, gz; // store gyroscope data
+    int16_t ax, ay, az; // accelerometer raw
+    int16_t gx, gy, gz; // gyroscope raw
     MPU6050 mpu;
     mpu.initialize();
     if (mpu.testConnection()) { // test sensor connection
@@ -63,12 +66,14 @@ int main() {
 }
 ```
 
-Connect your device, build it, and run it:
+Build the code:
 ```
 $ g++ mpu_raw.cpp -o mpu_raw -li2cdev
+```
 
+And run it:
+```
 $ ./mpu_raw
-
 ```
 
 ## Build Demos
@@ -80,7 +85,8 @@ Make sure you are working on the root directory of the project, then enter `MPU6
 $ cd MPU6050
 ```
 
-Head to the [Supported Devices](#supported-devices) table below, you will see the `MPU6050` have 3 types of demo, they are `raw`, `dmp6`, and `teapot`. In example, to build all of them, you just run `make` command with specified demo name:
+Head to the [Supported Devices](#supported-devices) table below, you see `MPU6050` device have 3 types of demo, they are `raw`, `dmp6`, and `teapot`.
+In example, to build all of them, you just run `make` command with specified name:
 ```
 $ make CONF=raw
 
