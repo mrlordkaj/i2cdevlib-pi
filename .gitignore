@@ -7,3 +7,8 @@
 **/nbproject/*.properties
 **/nbproject/*.xml
 **/.dep.inc
+
+# Arduino Manifest
+**.json
+**.txt
+**.pde
