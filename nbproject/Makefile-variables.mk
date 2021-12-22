@@ -8,9 +8,9 @@ CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/lib
+CND_ARTIFACT_DIR_Release=dist
 CND_ARTIFACT_NAME_Release=libi2cdev.so
-CND_ARTIFACT_PATH_Release=dist/lib/libi2cdev.so
+CND_ARTIFACT_PATH_Release=dist/libi2cdev.so
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
 CND_PACKAGE_NAME_Release=libi2cdevlib-pi.so.tar
 CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/libi2cdevlib-pi.so.tar

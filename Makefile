@@ -48,106 +48,123 @@
 MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
+CND_INSTALL_DIR=/usr/local
 
 
 # build
 build: .build-post
 
 .build-pre:
-# Add your pre 'build' code here...
-
+	@echo "Building sources..."
+	
 .build-post: .build-impl
-# Add your post 'build' code here...
-	[ -d ${CND_DISTDIR}/include ] || mkdir ${CND_DISTDIR}/include
-	cp Arduino/*.h ${CND_DISTDIR}/include
 	
-	[ -d ${CND_DISTDIR}/include/avr ] || mkdir ${CND_DISTDIR}/include/avr
-	cp Arduino/avr/*.h ${CND_DISTDIR}/include/avr
 	
-	[ -d ${CND_DISTDIR}/include/i2cdevlib ] || mkdir ${CND_DISTDIR}/include/i2cdevlib
-	cp I2Cdev/I2Cdev.h ${CND_DISTDIR}/include/i2cdevlib
-	cp AD7746/AD7746.h ${CND_DISTDIR}/include/i2cdevlib
-	cp ADS1115/ADS1115.h ${CND_DISTDIR}/include/i2cdevlib
-	cp ADXL345/ADXL345.h ${CND_DISTDIR}/include/i2cdevlib
-	cp AK8963/AK8963.h ${CND_DISTDIR}/include/i2cdevlib
-	cp AK8975/AK8975.h ${CND_DISTDIR}/include/i2cdevlib
-	cp BMA150/BMA150.h ${CND_DISTDIR}/include/i2cdevlib
-	cp BMP085/BMP085.h ${CND_DISTDIR}/include/i2cdevlib
-	cp DS1307/DS1307.h ${CND_DISTDIR}/include/i2cdevlib
-	cp HMC5843/HMC5843.h ${CND_DISTDIR}/include/i2cdevlib
-	cp HMC5883L/HMC5883L.h ${CND_DISTDIR}/include/i2cdevlib
-	cp HTU21D/HTU21D.h ${CND_DISTDIR}/include/i2cdevlib
-	cp IAQ2000/IAQ2000.h ${CND_DISTDIR}/include/i2cdevlib
-	cp ITG3200/ITG3200.h ${CND_DISTDIR}/include/i2cdevlib
-	cp L3G4200D/L3G4200D.h ${CND_DISTDIR}/include/i2cdevlib
-	cp L3GD20H/L3GD20H.h ${CND_DISTDIR}/include/i2cdevlib
-	cp LM73/LM73.h ${CND_DISTDIR}/include/i2cdevlib
-	cp LSM303DLHC/LSM303DLHC.h ${CND_DISTDIR}/include/i2cdevlib
-	cp MPR121/MPR121.h ${CND_DISTDIR}/include/i2cdevlib
-	cp MPU6050/MPU6050.h ${CND_DISTDIR}/include/i2cdevlib
-	cp MPU9150/MPU9150.h ${CND_DISTDIR}/include/i2cdevlib
-	#cp MS5803/MS5803_I2C.h ${CND_DISTDIR}/include/i2cdevlib
-	cp SSD1308/SSD1308.h ${CND_DISTDIR}/include/i2cdevlib
-	cp TCA6424A/TCA6424A.h ${CND_DISTDIR}/include/i2cdevlib
+# install
+install: .build-post .install-pre
+	@echo "Installing library..."
+	@[ -d ${CND_INSTALL_DIR}/include ] || mkdir ${CND_INSTALL_DIR}/include
+	@cp Arduino/*.h ${CND_INSTALL_DIR}/include
+	
+	@[ -d ${CND_INSTALL_DIR}/include/avr ] || mkdir ${CND_INSTALL_DIR}/include/avr
+	@cp Arduino/avr/*.h ${CND_INSTALL_DIR}/include/avr
+	
+	@[ -d ${CND_INSTALL_DIR}/include/i2cdevlib ] || mkdir ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp I2Cdev/I2Cdev.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp AD7746/AD7746.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp ADS1115/ADS1115.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp ADXL345/ADXL345.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp AK8963/AK8963.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp AK8975/AK8975.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp BMA150/BMA150.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp BMP085/BMP085.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp DS1307/DS1307.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp HMC5843/HMC5843.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp HMC5883L/HMC5883L.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp HTU21D/HTU21D.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp IAQ2000/IAQ2000.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp ITG3200/ITG3200.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp L3G4200D/L3G4200D.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp L3GD20H/L3GD20H.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp LM73/LM73.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp LSM303DLHC/LSM303DLHC.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp MPR121/MPR121.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp MPU6050/MPU6050.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp MPU9150/MPU9150.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@#cp MS5803/MS5803_I2C.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp SSD1308/SSD1308.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	@cp TCA6424A/TCA6424A.h ${CND_INSTALL_DIR}/include/i2cdevlib
+	
+	@cp ${CND_DISTDIR}/libi2cdev.so ${CND_INSTALL_DIR}/lib/libi2cdev.so
+	
+.install-pre:
+	@echo "Enabling I2C supports..."
+	@modprobe i2c-dev
+	@modprobe i2c-bcm2708
+	@if [ -f /dev/i2c-0 ]; then chmod 666 /dev/i2c-0; fi
+	@if [ -f /dev/i2c-1 ]; then chmod 666 /dev/i2c-1; fi
+	
+	@echo "Installing dependencies..."
+	@apt-get update
+	@apt-get install wiringpi -y
+	@#apt-get install freeglut3-dev -y
+	
+	
+# uninstall
+uninstall:
+	@echo "Uninstalling library..."
+	@rm -r ${CND_INSTALL_DIR}/include/avr
+	@rm -r ${CND_INSTALL_DIR}/include/i2cdevlib
+	@rm ${CND_INSTALL_DIR}/include/Arduino.h
+	@rm ${CND_INSTALL_DIR}/include/Wire.h
+	@rm ${CND_INSTALL_DIR}/lib/libi2cdev.so
 
 # clean
 clean: .clean-post
 
 .clean-pre:
-# Add your pre 'clean' code here...
 
 .clean-post: .clean-impl
-# Add your post 'clean' code here...
 
 
 # clobber
 clobber: .clobber-post
 
 .clobber-pre:
-# Add your pre 'clobber' code here...
 
 .clobber-post: .clobber-impl
-# Add your post 'clobber' code here...
 
 
 # all
 all: .all-post
 
 .all-pre:
-# Add your pre 'all' code here...
 
 .all-post: .all-impl
-# Add your post 'all' code here...
 
 
 # build tests
 build-tests: .build-tests-post
 
 .build-tests-pre:
-# Add your pre 'build-tests' code here...
 
 .build-tests-post: .build-tests-impl
-# Add your post 'build-tests' code here...
 
 
 # run tests
 test: .test-post
 
 .test-pre: build-tests
-# Add your pre 'test' code here...
 
 .test-post: .test-impl
-# Add your post 'test' code here...
 
 
 # help
 help: .help-post
 
 .help-pre:
-# Add your pre 'help' code here...
 
 .help-post: .help-impl
-# Add your post 'help' code here...
 
 
 
