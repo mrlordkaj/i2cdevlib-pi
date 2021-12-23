@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=MPU6050
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=raw
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release raw dmp6 teapot 
+ALLCONFS=raw dmp6 teapot 
 
 
 # build

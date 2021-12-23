@@ -62,11 +62,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk demo/${CND_CONF}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}
 
-demo/${CND_CONF}: ${OBJECTFILES}
-	${MKDIR} -p demo
-	${LINK.cc} -o demo/${CND_CONF} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -lGL -lglut -lGLU
+${CND_DISTDIR}/${CND_CONF}: ${OBJECTFILES}
+	${MKDIR} -p ${CND_DISTDIR}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF} ${OBJECTFILES} ${LDLIBSOPTIONS} -pthread -lwiringPi -lGL -lglut -lGLU
 
 ${OBJECTDIR}/_ext/d28afab9/Arduino.o: ../Arduino/Arduino.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9

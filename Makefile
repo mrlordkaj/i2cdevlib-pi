@@ -1,4 +1,27 @@
 #
+# The MIT License
+#
+# Copyright 2020 Thinh Pham.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+#
 #  There exist several targets which are by default empty and which can be 
 #  used for execution of your targets. These targets are usually executed 
 #  before and after some main targets. They are: 
@@ -48,21 +71,21 @@
 MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
-CND_INSTALL_DIR=/usr/local
+CND_INSTALL_DIR=/usr
 
 
 # build
 build: .build-post
 
 .build-pre:
-	@echo "Building sources..."
+	@echo "Compiling sources..."
 	
 .build-post: .build-impl
 	
 	
 # install
-install: .build-post .install-pre
-	@echo "Installing library..."
+install: .install-pre .build-post
+	@echo "Installing i2cdevlib..."
 	@[ -d ${CND_INSTALL_DIR}/include ] || mkdir ${CND_INSTALL_DIR}/include
 	@cp Arduino/*.h ${CND_INSTALL_DIR}/include
 	
@@ -95,7 +118,7 @@ install: .build-post .install-pre
 	@cp SSD1308/SSD1308.h ${CND_INSTALL_DIR}/include/i2cdevlib
 	@cp TCA6424A/TCA6424A.h ${CND_INSTALL_DIR}/include/i2cdevlib
 	
-	@cp ${CND_DISTDIR}/libi2cdev.so ${CND_INSTALL_DIR}/lib/libi2cdev.so
+	@mv ${CND_DISTDIR}/libi2cdev.so ${CND_INSTALL_DIR}/lib/libi2cdev.so
 	
 .install-pre:
 	@echo "Enabling I2C supports..."
@@ -104,15 +127,10 @@ install: .build-post .install-pre
 	@if [ -f /dev/i2c-0 ]; then chmod 666 /dev/i2c-0; fi
 	@if [ -f /dev/i2c-1 ]; then chmod 666 /dev/i2c-1; fi
 	
-	@echo "Installing dependencies..."
-	@apt-get update
-	@apt-get install wiringpi -y
-	@#apt-get install freeglut3-dev -y
-	
 	
 # uninstall
 uninstall:
-	@echo "Uninstalling library..."
+	@echo "Uninstalling i2cdevlib..."
 	@rm -r ${CND_INSTALL_DIR}/include/avr
 	@rm -r ${CND_INSTALL_DIR}/include/i2cdevlib
 	@rm ${CND_INSTALL_DIR}/include/Arduino.h

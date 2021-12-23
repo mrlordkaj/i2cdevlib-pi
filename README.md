@@ -19,19 +19,43 @@ Copyright 2019 Thinh Pham (wrapper).
 
 ## Installation
 
-Since I made an install bash script, you simply run it once for all:
+### Enable I2C Interface
+
+First of all, must ensure your Pi system has I2C interface enabled, can be done through `raspi-config` tool:
+```
+$ sudo raspi-config
+```
+The option to enable I2C interface is under `Interface Options`. You may need reboot your Pi then to apply changes.
+
+### Install Dependencies
+
+The `i2cdevlib-pi` library requires `wiringPi` library as it dependency:
+```
+$ sudo apt-get update
+
+$ sudo apt-get install wiringpi
+```
+
+Some of my visual demos also written on top of `freeglut3`, so if you want to compile them, consider to install this library as well (at your option):
+```
+$ sudo apt-get install freeglut3-dev -y
+```
+
+### Compile and Install
+
+Now you can download and install the `i2cdevlib-pi` library:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
 $ cd i2cdevlib-pi
 
-$ ./install.sh
+$ sudo make install
 ```
-After script process all done, you can use the library with your linker `-li2cdev`.
+After `make` process done, the library is ready to link compiler with `-li2cdev`.
 
 ## Getting Started
 
-Let's write first app which shows raw data of `MPU6050` device.
+Let's write first app which shows raw data of `MPU6050` device!
 
 Connect your MPU6050 device to the Raspberry Pi board:
 ![MPU6050 connected to Raspberry Pi](https://www.electronicwings.com/public/images/user_images/images/Raspberry%20Pi/RaspberryPi_Interface/RaspberryPi_MPU6050/MPU6050_interface_with_Raspberry%20Pi.png)
