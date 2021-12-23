@@ -1,10 +1,6 @@
 # MPU6050
 
-This module is a part of [i2cdevlib-pi](https://github.com/mrlordkaj/i2cdevlib-pi) library.
-
-## Installation
-
-Follow this instruction to install [i2cdevlib-pi](https://github.com/mrlordkaj/i2cdevlib-pi#installation).
+This module is a part of `i2cdevlib-pi` library. Please follow [this instruction](https://github.com/mrlordkaj/i2cdevlib-pi#installation) to install the library.
 
 ## Getting Started
 
@@ -53,7 +49,7 @@ $ ./mpu_raw
 
 ## Build Demos
 
-This module comes with 3 built-in demos `raw`, `dmp6`, and `teapot`. Make sure you are working on `MPU6050` directory, and run following commands to build all:
+This module comes with 3 built-in demos `raw`, `dmp6`, and `teapot`. Make sure you are working on `MPU6050` directory, then run build commands:
 ```
 $ make CONF=raw
 
