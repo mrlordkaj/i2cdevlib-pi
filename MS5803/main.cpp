@@ -26,9 +26,9 @@
  * Author: Thinh Pham
  */
 
-#ifndef RELEASE
-
+#ifdef DEMO_TEST
 #include "examples/test_MS5803/test_MS5803.ino"
+#endif
 
 using namespace std;
 
@@ -39,5 +39,3 @@ int main(int argc, char** argv) {
         loop();
     return 0;
 }
-
-#endif

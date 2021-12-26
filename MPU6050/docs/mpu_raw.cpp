@@ -1,6 +1,6 @@
 #include <unistd.h> // standard libs
 #include <Arduino.h> // abstract layer
-#include <i2cdevlib/MPU6050.h>
+#include <MPU6050.h>
 
 int main() {
     int16_t ax, ay, az; // accelerometer raw

@@ -57,5 +57,6 @@ $ make CONF=dmp6
 
 $ make CONF=teapot
 ```
+NOTE: `freeglut3-dev` is required for `teapot` demo.
 
-After `make` processes all done, executable demos will be ready in `MPU6050/dist` directory.
+After `make` processes done, executable demos will available in `MPU6050/dist` directory.

@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=BMA150
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=raw
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release raw 
+ALLCONFS=raw 
 
 
 # build

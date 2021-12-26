@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=ADS1115
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=single
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release single differential 
+ALLCONFS=single differential 
 
 
 # build

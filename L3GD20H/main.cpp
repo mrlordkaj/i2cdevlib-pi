@@ -26,9 +26,9 @@
  * Author: Thinh Pham
  */
 
-#ifndef RELEASE
-
+#ifdef DEMO_BASIC
 #include "examples/L3GD20H_basic/L3GD20H_basic.ino"
+#endif
 
 int main(int argc, char** argv) {
     wiringPiSetup();
@@ -37,6 +37,3 @@ int main(int argc, char** argv) {
         loop();
     return 0;
 }
-
-#endif
-

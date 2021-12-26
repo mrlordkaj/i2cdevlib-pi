@@ -26,9 +26,9 @@
  * Author: Thinh Pham
  */
 
-#ifndef RELEASE
-
+#ifdef DEMO_RAW
 #include "examples/ITG3200_raw/ITG3200_raw.ino"
+#endif
 
 int main(int argc, char** argv) {
     wiringPiSetup();
@@ -37,6 +37,3 @@ int main(int argc, char** argv) {
         loop();
     return 0;
 }
-
-#endif
-

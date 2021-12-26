@@ -26,11 +26,9 @@
  * Author: Thinh Pham
  */
 
-#ifndef RELEASE
-
 #ifdef DEMO_SINGLE
 #include "examples/ADS1115_single/ADS1115_single.ino"
-#elif defined(DEMO_DIFFERENTIAL)
+#elif defined DEMO_DIFFERENTIAL
 #include "examples/ADS1115_differential/ADS1115_differential.ino"
 #endif
 
@@ -41,5 +39,3 @@ int main(int argc, char** argv) {
         loop();
     return 0;
 }
-
-#endif

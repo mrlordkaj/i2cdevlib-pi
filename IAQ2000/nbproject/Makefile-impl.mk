@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=IAQ2000
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=demo
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release demo 
+ALLCONFS=demo 
 
 
 # build

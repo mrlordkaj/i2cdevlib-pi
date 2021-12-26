@@ -26,9 +26,9 @@
  * Author: Thinh Pham
  */
 
-#ifndef RELEASE
-
+#ifdef DEMO_RAW
 #include "examples/HMC5843_raw/HMC5843_raw.ino"
+#endif
 
 int main(int argc, char** argv) {
     wiringPiSetup();
@@ -37,5 +37,3 @@ int main(int argc, char** argv) {
         loop();
     return 0;
 }
-
-#endif

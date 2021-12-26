@@ -6,27 +6,19 @@
 CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
-# Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist
-CND_ARTIFACT_NAME_Release=libads1115.a
-CND_ARTIFACT_PATH_Release=dist/libads1115.a
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=ADS1115.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/ADS1115.tar
 # single configuration
 CND_PLATFORM_single=GNU-Linux
-CND_ARTIFACT_DIR_single=demo
+CND_ARTIFACT_DIR_single=dist
 CND_ARTIFACT_NAME_single=single
-CND_ARTIFACT_PATH_single=demo/single
+CND_ARTIFACT_PATH_single=dist/single
 CND_PACKAGE_DIR_single=dist/single/GNU-Linux/package
 CND_PACKAGE_NAME_single=ads1115.tar
 CND_PACKAGE_PATH_single=dist/single/GNU-Linux/package/ads1115.tar
 # differential configuration
 CND_PLATFORM_differential=GNU-Linux
-CND_ARTIFACT_DIR_differential=demo
+CND_ARTIFACT_DIR_differential=dist
 CND_ARTIFACT_NAME_differential=differential
-CND_ARTIFACT_PATH_differential=demo/differential
+CND_ARTIFACT_PATH_differential=dist/differential
 CND_PACKAGE_DIR_differential=dist/differential/GNU-Linux/package
 CND_PACKAGE_NAME_differential=ads1115.tar
 CND_PACKAGE_PATH_differential=dist/differential/GNU-Linux/package/ads1115.tar

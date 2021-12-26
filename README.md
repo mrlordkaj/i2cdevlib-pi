@@ -19,14 +19,6 @@ Copyright 2019 Thinh Pham (wrapper).
 
 ## Installation
 
-### Enable I2C Interface
-
-First of all, must ensure your Pi system has I2C interface enabled, can be done through `raspi-config` tool:
-```
-$ sudo raspi-config
-```
-The option to enable I2C interface is under `Interface Options`. You may need reboot your Pi then to apply changes.
-
 ### Install Dependencies
 
 The `i2cdevlib-pi` library requires `wiringPi` library as it dependency:
@@ -36,14 +28,14 @@ $ sudo apt-get update
 $ sudo apt-get install wiringpi
 ```
 
-Some of my visual demos also written on top of `freeglut3`, so if you want to compile them, consider to install this library as well (at your option):
+Some of visual demos require `freeglut3-dev` to be installed in order to compile (optional):
 ```
 $ sudo apt-get install freeglut3-dev -y
 ```
 
-### Compile and Install
+### Install from Source (Alternative)
 
-Now you can download and install the `i2cdevlib-pi` library:
+You can also can download and install library from source code:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
@@ -59,15 +51,15 @@ Let's get start with module [MPU6050](MPU6050).
 
 ## Build Demos
 
-Most of devices come with various demos. This section guides you to build `MPU6050`'s demos (all other demo can be built by the same way).
+Most of devices come with various demos. This section guides you how to build `MPU6050` demos (other demos can be built by the same way).
 
 Make sure you are working on the root directory of the project, then enter `MPU6050` directory:
 ```
 $ cd MPU6050
 ```
 
-Head to the [Supported Devices](#supported-devices) table below, you see `MPU6050` device have 3 types of demo, they are `raw`, `dmp6`, and `teapot`.
-In example, to build all of them, you just run `make` command with specified name:
+Head to the [Supported Devices](#supported-devices) table below, you see MPU6050 module has `raw`, `dmp6`, and `teapot` demos.
+In order to build all, run `make` with specified target:
 ```
 $ make CONF=raw
 
@@ -75,10 +67,11 @@ $ make CONF=dmp6
 
 $ make CONF=teapot
 ```
+NOTE: `freeglut3-dev` is required for `teapot` demo.
 
-After `make` process all done, your demo application will ready in `demo` directory, you can run it now:
+After `make` processes done, executable demos will available in `dist` directory, try to run it:
 ```
-$ ./demo/teapot
+$ ./dist/teapot
 ```
 
 ## Supported Devices
@@ -105,6 +98,6 @@ $ ./demo/teapot
 | MPR121 | Passed | No | - |
 | [MPU6050](MPU6050) | Passed | Yes | `raw`, `dmp6`, `teapot` |
 | MPU9150 | Passed | No | `raw` |
-| MS5803 | Failed (AVR only) | - | `test` |
+| MS5803 | Passed | No | `test` |
 | SSD1308 | Passed | No | - |
 | TCA6424A | Passed | No | - |

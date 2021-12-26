@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=HTU21D
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=simple
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release simple 
+ALLCONFS=simple 
 
 
 # build

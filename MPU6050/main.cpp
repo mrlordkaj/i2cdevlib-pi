@@ -30,8 +30,6 @@
 #include "Teapot.h"
 #endif
 
-#ifndef RELEASE
-
 int main(int argc, char *argv[]) {
     wiringPiSetup();
     
@@ -53,5 +51,3 @@ int main(int argc, char *argv[]) {
     
     return 0;
 }
-
-#endif

@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=BMP085
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=basic
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release basic 
+ALLCONFS=basic 
 
 
 # build

@@ -31,7 +31,7 @@ DEFAULTCONF=test
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=test Release 
+ALLCONFS=test 
 
 
 # build

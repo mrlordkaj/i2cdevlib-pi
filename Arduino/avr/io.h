@@ -26,14 +26,14 @@
  * Author: Thinh Pham
  */
 
-#ifdef DEMO_RAW
-#include "examples/ADXL345_raw/ADXL345_raw.ino"
+#pragma once
+
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-int main(int argc, char** argv) {
-    wiringPiSetup();
-    setup();
-    while (true)
-        loop();
-    return 0;
+#define CLKPR 0
+
+#ifdef __cplusplus
 }
+#endif

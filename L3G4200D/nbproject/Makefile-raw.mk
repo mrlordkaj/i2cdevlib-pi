@@ -61,41 +61,41 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk demo/${CND_CONF}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}
 
-demo/${CND_CONF}: ${OBJECTFILES}
-	${MKDIR} -p demo
-	${LINK.cc} -o demo/${CND_CONF} ${OBJECTFILES} ${LDLIBSOPTIONS} -lwiringPi -lpthread -shared -fPIC
+${CND_DISTDIR}/${CND_CONF}: ${OBJECTFILES}
+	${MKDIR} -p ${CND_DISTDIR}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF} ${OBJECTFILES} ${LDLIBSOPTIONS} -pthread -lwiringPi
 
 ${OBJECTDIR}/_ext/d28afab9/Arduino.o: ../Arduino/Arduino.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
 
 ${OBJECTDIR}/_ext/d28afab9/Wire.o: ../Arduino/Wire.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
 
 ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o: ../Arduino/avr/dtostrf.c
 	${MKDIR} -p ${OBJECTDIR}/_ext/4ac3ce87
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
 
 ${OBJECTDIR}/_ext/847938aa/I2Cdev.o: ../I2Cdev/I2Cdev.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
 
 ${OBJECTDIR}/L3G4200D.o: L3G4200D.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/L3G4200D.o L3G4200D.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/L3G4200D.o L3G4200D.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

@@ -26,9 +26,9 @@
  * Author: Thinh Pham
  */
 
-#ifndef RELEASE
-
+#ifdef DEMO_SIMPLE
 #include "examples/HTU21D_simple/HTU21D_simple.ino"
+#endif
 
 int main(int argc, char** argv) {
     wiringPiSetup();
@@ -37,6 +37,3 @@ int main(int argc, char** argv) {
         loop();
     return 0;
 }
-
-#endif
-

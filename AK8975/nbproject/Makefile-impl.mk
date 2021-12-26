@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=AK8975
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=raw
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release raw mpu_raw mpu_heading 
+ALLCONFS=raw mpu_raw mpu_heading 
 
 
 # build

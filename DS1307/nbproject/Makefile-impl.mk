@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=DS1307
 
 # Active Configuration
-DEFAULTCONF=Release
+DEFAULTCONF=tick
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release tick 
+ALLCONFS=tick 
 
 
 # build

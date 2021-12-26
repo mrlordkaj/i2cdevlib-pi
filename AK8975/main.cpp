@@ -26,13 +26,11 @@
  * Author: Thinh Pham
  */
 
-#ifndef RELEASE
-
 #ifdef DEMO_RAW
 #include "examples/AK8975_raw/AK8975_raw.ino"
-#elif defined(DEMO_MPU_RAW)
+#elif defined DEMO_MPU_RAW
 #include "examples/AK8975_MPUEVB_raw/AK8975_MPUEVB_raw.ino"
-#elif defined(DEMO_MPU_HEADING)
+#elif defined DEMO_MPU_HEADING
 #include "examples/AK8975_MPUEVB_heading/AK8975_MPUEVB_heading.ino"
 #endif
 
@@ -43,5 +41,3 @@ int main(int argc, char** argv) {
         loop();
     return 0;
 }
-
-#endif

@@ -36,6 +36,7 @@
 #include <bitset>
 #include "avr/pgmspace.h"
 #include "avr/dtostrf.h"
+#include "avr/io.h"
 
 #include <iostream>
 #include <cstring>
