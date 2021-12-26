@@ -33,9 +33,18 @@ Some of visual demos require `freeglut3-dev` to be installed in order to compile
 $ sudo apt-get install freeglut3-dev -y
 ```
 
+### Install from Package (Recommended)
+
+Install from debian package is highly recommended:
+```
+$ wget https://raw.githubusercontent.com/mrlordkaj/i2cdevlib-pi/master/package/i2cdevlib.deb
+
+$ sudo dpkg -i i2cdevlib.deb
+```
+
 ### Install from Source (Alternative)
 
-You can also can download and install library from source code:
+You can also compile and install from source:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
@@ -43,11 +52,12 @@ $ cd i2cdevlib-pi
 
 $ sudo make install
 ```
-After `make` process done, the library is ready to link compiler with `-li2cdev`.
 
 ## Getting Started
 
-Let's get start with module [MPU6050](MPU6050).
+Once installed, you can link the library to your project with `-li2cdev`.
+
+Now let's get start with module [MPU6050](MPU6050).
 
 ## Build Demos
 

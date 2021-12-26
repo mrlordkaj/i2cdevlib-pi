@@ -54,7 +54,7 @@ function copyFileToTmpDir
 
 # Setup
 cd "${TOP}"
-mkdir -p ${CND_DISTDIR}/package
+mkdir -p package
 rm -rf ${NBTMPDIR}
 mkdir -p ${NBTMPDIR}
 
@@ -192,6 +192,7 @@ echo 'Version: 1.0.1' >> ${CONTROL_FILE}
 echo 'Architecture: armhf' >> ${CONTROL_FILE}
 echo 'Maintainer: Thinh Pham' >> ${CONTROL_FILE}
 echo 'Description: Unofficial i2cdevlib running on Raspberry Pi devices.' >> ${CONTROL_FILE}
+echo 'Depends: wiringPi' >> ${CONTROL_FILE}
 
 # Create Debian Package
 cd "${TOP}"
@@ -199,10 +200,10 @@ cd "${NBTMPDIR}/.."
 dpkg-deb  --build ${TMPDIRNAME}
 checkReturnCode
 cd "${TOP}"
-mkdir -p  ${CND_DISTDIR}/package
-mv ${NBTMPDIR}.deb ${CND_DISTDIR}/package/i2cdevlib.deb
+mkdir -p  package
+mv ${NBTMPDIR}.deb package/i2cdevlib.deb
 checkReturnCode
-echo Debian: ${CND_DISTDIR}/package/i2cdevlib.deb
+echo Debian: package/i2cdevlib.deb
 
 # Cleanup
 cd "${TOP}"
