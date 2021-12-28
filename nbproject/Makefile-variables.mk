@@ -11,9 +11,9 @@ CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist
 CND_ARTIFACT_NAME_Release=libi2cdev.so
 CND_ARTIFACT_PATH_Release=dist/libi2cdev.so
-CND_PACKAGE_DIR_Release=package
+CND_PACKAGE_DIR_Release=dist/package
 CND_PACKAGE_NAME_Release=i2cdevlib.deb
-CND_PACKAGE_PATH_Release=package/i2cdevlib.deb
+CND_PACKAGE_PATH_Release=dist/package/i2cdevlib.deb
 #
 # include compiler specific variables
 #

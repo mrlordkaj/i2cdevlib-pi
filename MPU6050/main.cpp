@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     
 #ifdef DEMO_TEAPOT
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH | GLUT_STENCIL);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
     glutInitWindowPosition(200, 100);
     glutCreateWindow("MPU6050 Demo");

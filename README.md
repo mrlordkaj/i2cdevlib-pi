@@ -3,7 +3,7 @@
 The I2C Device Library (i2cdevlib) is a collection of uniform and well-documented classes to provide simple
 and intuitive interfaces to I2C devices, made by Jeff Rowberg.
 
-My effort is make a simulation of Arduino to run the library on RaspberryPi without (or minimum) tweaks of his code.
+My effort is to make this library works on Raspberry Pi devices without minimum tweaks of code.
 Therefore, we will gain benefits of further update from the original project.
 
 The library only tested on devices I already have. Testing progress are reported at [Supported Devices](#supported-devices) table.
@@ -15,7 +15,7 @@ This project inherits [The MIT license](LICENSE) from original project.
 
 Copyright 2012 Jeff Rowberg (i2cdevlib).
 
-Copyright 2019 Thinh Pham (wrapper).
+Copyright 2019 Thinh Pham (i2cdevlib-pi).
 
 ## Installation
 
@@ -25,7 +25,7 @@ The `i2cdevlib-pi` library requires `wiringPi` library as it dependency:
 ```
 $ sudo apt-get update
 
-$ sudo apt-get install wiringpi
+$ sudo apt-get install wiringpi -y
 ```
 
 Some of visual demos require `freeglut3-dev` to be installed in order to compile (optional):
@@ -37,14 +37,14 @@ $ sudo apt-get install freeglut3-dev -y
 
 Install from debian package is highly recommended:
 ```
-$ wget https://raw.githubusercontent.com/mrlordkaj/i2cdevlib-pi/master/package/i2cdevlib.deb
+$ wget https://raw.githubusercontent.com/mrlordkaj/i2cdevlib-pi/master/docs/i2cdevlib.deb
 
 $ sudo dpkg -i i2cdevlib.deb
 ```
 
 ### Install from Source (Alternative)
 
-You can also compile and install from source:
+You can also compile and install from source manually:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
@@ -55,9 +55,41 @@ $ sudo make install
 
 ## Getting Started
 
-Once installed, you can link the library to your project with `-li2cdev`.
+### Wiring Device
 
-Now let's get start with module [MPU6050](MPU6050).
+Type `pinout` in terminal or go to website [pinout.xyz](https://pinout.xyz/pinout/i2c) to see the pinout map of your Raspberry Pi. Then follow the wiring diagram bellow:
+
+| Raspberry Pi | I2C Device |
+| --- | --- |
+| 3V3 | VCC |
+| GND | GND |
+| GPIO3 | SCL |
+| GPIO2 | SDA |
+
+### Linking Library
+
+Create [hello.cpp](docs/hello.cpp) source file:
+```c++
+#include <unistd.h> // standard libs
+#include <Arduino.h> // abstract layer
+
+int main() {
+    printf("Arduino %d\r\n", ARDUINO);
+    return 0;
+}
+```
+
+And build it by `g++` tool with linker `-li2cdev`.
+```
+$ g++ hello.cpp -o hello -li2cdev
+```
+
+Compiled program will print out string `Arduino 10812` to your terminal:
+```
+$ ./hello
+```
+
+If everything is correct, you can try to continue with [MPU6050](MPU6050) guide then.
 
 ## Build Demos
 

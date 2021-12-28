@@ -9,11 +9,11 @@ Let's write your first app which shows raw data from `MPU6050` device!
 Connect your MPU6050 device to the Raspberry Pi board:
 ![MPU6050 connected to Raspberry Pi](docs/MPU6050_interface_with_Pi.png)
 
-Create new file named [mpu_raw.cpp](docs/mpu_raw.cpp) and write its code:
+Create new file [mpu_raw.cpp](docs/mpu_raw.cpp) with code:
 ```c++
 #include <unistd.h> // standard libs
 #include <Arduino.h> // abstract layer
-#include <i2cdevlib/MPU6050.h>
+#include <MPU6050.h> // module class
 
 int main() {
     int16_t ax, ay, az; // accelerometer raw
@@ -37,13 +37,10 @@ int main() {
 }
 ```
 
-Build the code:
+Compile and run it:
 ```
 $ g++ mpu_raw.cpp -o mpu_raw -li2cdev
-```
 
-And run it:
-```
 $ ./mpu_raw
 ```
 
@@ -57,6 +54,6 @@ $ make CONF=dmp6
 
 $ make CONF=teapot
 ```
-NOTE: `freeglut3-dev` is required for `teapot` demo.
+NOTE: `teapot` demo requires `freeglut3-dev` to be installed.
 
 After `make` processes done, executable demos will available in `MPU6050/dist` directory.

@@ -54,7 +54,7 @@ function copyFileToTmpDir
 
 # Setup
 cd "${TOP}"
-mkdir -p package
+mkdir -p ${CND_DISTDIR}/package
 rm -rf ${NBTMPDIR}
 mkdir -p ${NBTMPDIR}
 
@@ -66,6 +66,10 @@ copyFileToTmpDir "DEBIAN/postinst" "${NBTMPDIR}/DEBIAN/postinst" 0755
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}//usr/include/avr"
 copyFileToTmpDir "Arduino/avr/dtostrf.h" "${NBTMPDIR}/${PACKAGE_TOP_DIR}include/avr/dtostrf.h" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}//usr/include/avr"
+copyFileToTmpDir "Arduino/avr/io.h" "${NBTMPDIR}/${PACKAGE_TOP_DIR}include/avr/io.h" 0644
 
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}//usr/include/avr"
@@ -200,10 +204,10 @@ cd "${NBTMPDIR}/.."
 dpkg-deb  --build ${TMPDIRNAME}
 checkReturnCode
 cd "${TOP}"
-mkdir -p  package
-mv ${NBTMPDIR}.deb package/i2cdevlib.deb
+mkdir -p  ${CND_DISTDIR}/package
+mv ${NBTMPDIR}.deb ${CND_DISTDIR}/package/i2cdevlib.deb
 checkReturnCode
-echo Debian: package/i2cdevlib.deb
+echo Debian: ${CND_DISTDIR}/package/i2cdevlib.deb
 
 # Cleanup
 cd "${TOP}"
