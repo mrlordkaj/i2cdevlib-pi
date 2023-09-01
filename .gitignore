@@ -4,10 +4,8 @@
 **/dist/
 **/nbproject/private/
 **/nbproject/*.bash
-**/nbproject/*.properties
-**/nbproject/*.xml
+**/nbproject/*.mk
 **/.dep.inc
-!nbproject/*.bash
 
 # Arduino Manifest
 **.json

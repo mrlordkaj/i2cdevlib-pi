@@ -47,6 +47,8 @@
 
 #define ARDUINO 10812 // 1.8.12
 
+int getArduino();
+
 #define HEX 16
 #define DEC 10
 #define OCT 8
@@ -89,7 +91,6 @@ long map(long x, long in_min, long in_max, long out_min, long out_max);
 int digitalPinToInterrupt(int pin);
 
 void attachInterrupt(int pin, void (*isr)(void), int mode);
-
 
 // ================================================================
 // ===                ARDUINO SERIAL SIMULATION                 ===

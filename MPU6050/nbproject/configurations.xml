@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="Arduino" displayName="Arduino" projectFiles="true">
+        <logicalFolder name="avr" displayName="avr" projectFiles="true">
+          <itemPath>../Arduino/avr/dtostrf.c</itemPath>
+          <itemPath>../Arduino/avr/dtostrf.h</itemPath>
+          <itemPath>../Arduino/avr/io.h</itemPath>
+          <itemPath>../Arduino/avr/pgmspace.h</itemPath>
+        </logicalFolder>
+        <itemPath>../Arduino/Arduino.cpp</itemPath>
+        <itemPath>../Arduino/Arduino.h</itemPath>
+        <itemPath>../Arduino/Wire.cpp</itemPath>
+        <itemPath>../Arduino/Wire.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="examples" displayName="examples" projectFiles="true">
+        <logicalFolder name="IMU_Zero" displayName="IMU_Zero" projectFiles="true">
+          <itemPath>examples/IMU_Zero/IMU_Zero.ino</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MPU6050_DMP6"
+                       displayName="MPU6050_DMP6"
+                       projectFiles="true">
+          <itemPath>examples/MPU6050_DMP6/MPU6050_DMP6.ino</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MPU6050_DMP6_ESPWiFi"
+                       displayName="MPU6050_DMP6_ESPWiFi"
+                       projectFiles="true">
+          <itemPath>examples/MPU6050_DMP6_ESPWiFi/MPU6050_DMP6_ESPWiFi.ino</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MPU6050_DMP6_Ethernet"
+                       displayName="MPU6050_DMP6_Ethernet"
+                       projectFiles="true">
+          <itemPath>examples/MPU6050_DMP6_Ethernet/MPU6050_DMP6_Ethernet.ino</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MPU6050_DMP6_using_DMP_V6.12"
+                       displayName="MPU6050_DMP6_using_DMP_V6.12"
+                       projectFiles="true">
+          <itemPath>examples/MPU6050_DMP6_using_DMP_V6.12/MPU6050_DMP6_using_DMP_V6.12.ino</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MPU6050_raw" displayName="MPU6050_raw" projectFiles="true">
+          <itemPath>examples/MPU6050_raw/MPU6050_raw.ino</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="I2Cdev" displayName="I2Cdev" projectFiles="true">
+        <itemPath>../I2Cdev/I2Cdev.cpp</itemPath>
+        <itemPath>../I2Cdev/I2Cdev.h</itemPath>
+      </logicalFolder>
+      <itemPath>MPU6050.cpp</itemPath>
+      <itemPath>MPU6050.h</itemPath>
+      <itemPath>MPU6050_6Axis_MotionApps20.h</itemPath>
+      <itemPath>MPU6050_6Axis_MotionApps_V6_12.h</itemPath>
+      <itemPath>MPU6050_9Axis_MotionApps41.h</itemPath>
+      <itemPath>Teapot.cpp</itemPath>
+      <itemPath>Teapot.h</itemPath>
+      <itemPath>helper_3dmath.h</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>examples</Elem>
+    <Elem>../Arduino</Elem>
+    <Elem>../I2Cdev</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="raw" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../Arduino</pElem>
+            <pElem>../I2Cdev</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <incFile>
+            <pElem>../Arduino/Arduino.h</pElem>
+          </incFile>
+          <preprocessorList>
+            <Elem>DEMO_RAW</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}</output>
+          <commandLine>-pthread -lwiringPi</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MPU6050.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_6Axis_MotionApps20.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_6Axis_MotionApps_V6_12.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_9Axis_MotionApps41.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Teapot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Teapot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/IMU_Zero/IMU_Zero.ino" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6/MPU6050_DMP6.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_ESPWiFi/MPU6050_DMP6_ESPWiFi.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_Ethernet/MPU6050_DMP6_Ethernet.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_using_DMP_V6.12/MPU6050_DMP6_using_DMP_V6.12.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_raw/MPU6050_raw.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="helper_3dmath.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="dmp6" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../Arduino</pElem>
+            <pElem>../I2Cdev</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <incFile>
+            <pElem>../Arduino/Arduino.h</pElem>
+          </incFile>
+          <preprocessorList>
+            <Elem>DEMO_DMP6</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}</output>
+          <commandLine>-pthread -lwiringPi</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="9">
+      </item>
+      <item path="../Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="MPU6050.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_6Axis_MotionApps20.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_6Axis_MotionApps_V6_12.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_9Axis_MotionApps41.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Teapot.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="Teapot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/IMU_Zero/IMU_Zero.ino" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6/MPU6050_DMP6.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_ESPWiFi/MPU6050_DMP6_ESPWiFi.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_Ethernet/MPU6050_DMP6_Ethernet.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_using_DMP_V6.12/MPU6050_DMP6_using_DMP_V6.12.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_raw/MPU6050_raw.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="helper_3dmath.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+    </conf>
+    <conf name="teapot" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../Arduino</pElem>
+            <pElem>../I2Cdev</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <incFile>
+            <pElem>../Arduino/Arduino.h</pElem>
+          </incFile>
+          <preprocessorList>
+            <Elem>DEMO_TEAPOT</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}</output>
+          <commandLine>-pthread -lwiringPi -lGL -lglut -lGLU</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="9">
+      </item>
+      <item path="../Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="MPU6050.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_6Axis_MotionApps20.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_6Axis_MotionApps_V6_12.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050_9Axis_MotionApps41.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Teapot.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+      <item path="Teapot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/IMU_Zero/IMU_Zero.ino" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6/MPU6050_DMP6.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_ESPWiFi/MPU6050_DMP6_ESPWiFi.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_Ethernet/MPU6050_DMP6_Ethernet.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_DMP6_using_DMP_V6.12/MPU6050_DMP6_using_DMP_V6.12.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="examples/MPU6050_raw/MPU6050_raw.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="helper_3dmath.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="9">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

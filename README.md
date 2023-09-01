@@ -74,7 +74,7 @@ Create [hello.cpp](docs/hello.cpp) source file:
 #include <Arduino.h> // abstract layer
 
 int main() {
-    printf("Arduino %d\r\n", ARDUINO);
+    printf("Arduino %d\r\n", getArduino());
     return 0;
 }
 ```

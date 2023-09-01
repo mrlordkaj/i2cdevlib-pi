@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="AD7746" displayName="AD7746" projectFiles="true">
+        <itemPath>AD7746/AD7746.cpp</itemPath>
+        <itemPath>AD7746/AD7746.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="ADS1115" displayName="ADS1115" projectFiles="true">
+        <itemPath>ADS1115/ADS1115.cpp</itemPath>
+        <itemPath>ADS1115/ADS1115.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="ADXL345" displayName="ADXL345" projectFiles="true">
+        <itemPath>ADXL345/ADXL345.cpp</itemPath>
+        <itemPath>ADXL345/ADXL345.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="AK8963" displayName="AK8963" projectFiles="true">
+        <itemPath>AK8963/AK8963.cpp</itemPath>
+        <itemPath>AK8963/AK8963.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="AK8975" displayName="AK8975" projectFiles="true">
+        <itemPath>AK8975/AK8975.cpp</itemPath>
+        <itemPath>AK8975/AK8975.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Arduino" displayName="Arduino" projectFiles="true">
+        <logicalFolder name="avr" displayName="avr" projectFiles="true">
+          <itemPath>Arduino/avr/dtostrf.c</itemPath>
+          <itemPath>Arduino/avr/dtostrf.h</itemPath>
+          <itemPath>Arduino/avr/io.h</itemPath>
+          <itemPath>Arduino/avr/pgmspace.h</itemPath>
+        </logicalFolder>
+        <itemPath>Arduino/Arduino.cpp</itemPath>
+        <itemPath>Arduino/Arduino.h</itemPath>
+        <itemPath>Arduino/Wire.cpp</itemPath>
+        <itemPath>Arduino/Wire.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="BMA150" displayName="BMA150" projectFiles="true">
+        <itemPath>BMA150/BMA150.cpp</itemPath>
+        <itemPath>BMA150/BMA150.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="BMP085" displayName="BMP085" projectFiles="true">
+        <itemPath>BMP085/BMP085.cpp</itemPath>
+        <itemPath>BMP085/BMP085.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="DS1307" displayName="DS1307" projectFiles="true">
+        <itemPath>DS1307/DS1307.cpp</itemPath>
+        <itemPath>DS1307/DS1307.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="HMC5843" displayName="HMC5843" projectFiles="true">
+        <itemPath>HMC5843/HMC5843.cpp</itemPath>
+        <itemPath>HMC5843/HMC5843.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="HMC5883L" displayName="HMC5883L" projectFiles="true">
+        <itemPath>HMC5883L/HMC5883L.cpp</itemPath>
+        <itemPath>HMC5883L/HMC5883L.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="HTU21D" displayName="HTU21D" projectFiles="true">
+        <itemPath>HTU21D/HTU21D.cpp</itemPath>
+        <itemPath>HTU21D/HTU21D.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="I2Cdev" displayName="I2Cdev" projectFiles="true">
+        <itemPath>I2Cdev/I2Cdev.cpp</itemPath>
+        <itemPath>I2Cdev/I2Cdev.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="IAQ2000" displayName="IAQ2000" projectFiles="true">
+        <itemPath>IAQ2000/IAQ2000.cpp</itemPath>
+        <itemPath>IAQ2000/IAQ2000.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="ITG3200" displayName="ITG3200" projectFiles="true">
+        <itemPath>ITG3200/ITG3200.cpp</itemPath>
+        <itemPath>ITG3200/ITG3200.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="L3G4200D" displayName="L3G4200D" projectFiles="true">
+        <itemPath>L3G4200D/L3G4200D.cpp</itemPath>
+        <itemPath>L3G4200D/L3G4200D.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="L3GD20H" displayName="L3GD20H" projectFiles="true">
+        <itemPath>L3GD20H/L3GD20H.cpp</itemPath>
+        <itemPath>L3GD20H/L3GD20H.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="LM73" displayName="LM73" projectFiles="true">
+        <itemPath>LM73/LM73.cpp</itemPath>
+        <itemPath>LM73/LM73.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="LSM303DLHC" displayName="LSM303DLHC" projectFiles="true">
+        <itemPath>LSM303DLHC/LSM303DLHC.cpp</itemPath>
+        <itemPath>LSM303DLHC/LSM303DLHC.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="MPR121" displayName="MPR121" projectFiles="true">
+        <itemPath>MPR121/MPR121.cpp</itemPath>
+        <itemPath>MPR121/MPR121.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="MPU6050" displayName="MPU6050" projectFiles="true">
+        <itemPath>MPU6050/MPU6050.cpp</itemPath>
+        <itemPath>MPU6050/MPU6050.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="MPU9150" displayName="MPU9150" projectFiles="true">
+        <itemPath>MPU9150/MPU9150.cpp</itemPath>
+        <itemPath>MPU9150/MPU9150.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="MS5803" displayName="MS5803" projectFiles="true">
+        <itemPath>MS5803/MS5803.cpp</itemPath>
+        <itemPath>MS5803/MS5803.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="SSD1308" displayName="SSD1308" projectFiles="true">
+        <itemPath>SSD1308/SSD1308.cpp</itemPath>
+        <itemPath>SSD1308/SSD1308.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="TCA6424A" displayName="TCA6424A" projectFiles="true">
+        <itemPath>TCA6424A/TCA6424A.cpp</itemPath>
+        <itemPath>TCA6424A/TCA6424A.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>AD7746</Elem>
+    <Elem>ADS1115</Elem>
+    <Elem>ADXL345</Elem>
+    <Elem>AK8963</Elem>
+    <Elem>AK8975</Elem>
+    <Elem>Arduino</Elem>
+    <Elem>BMA150</Elem>
+    <Elem>BMP085</Elem>
+    <Elem>DS1307</Elem>
+    <Elem>HMC5843</Elem>
+    <Elem>HMC5883L</Elem>
+    <Elem>HTU21D</Elem>
+    <Elem>I2Cdev</Elem>
+    <Elem>IAQ2000</Elem>
+    <Elem>ITG3200</Elem>
+    <Elem>L3G4200D</Elem>
+    <Elem>L3GD20H</Elem>
+    <Elem>LM73</Elem>
+    <Elem>LSM303DLHC</Elem>
+    <Elem>MPR121</Elem>
+    <Elem>MPU6050</Elem>
+    <Elem>MPU9150</Elem>
+    <Elem>MS5803</Elem>
+    <Elem>SSD1308</Elem>
+    <Elem>TCA6424A</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>I2Cdev</pElem>
+            <pElem>Arduino</pElem>
+          </incDir>
+          <incFile>
+            <pElem>Arduino/Arduino.h</pElem>
+          </incFile>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT}</output>
+          <commandLine>-pthread -lwiringPi</commandLine>
+        </linkerTool>
+      </compileType>
+      <packaging>
+        <packType>Debian</packType>
+        <output>${CND_DISTDIR}/package/i2cdevlib.deb</output>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="DEBIAN/postinst"
+                            from="DEBIAN/postinst"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/avr/dtostrf.h"
+                            from="Arduino/avr/dtostrf.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/avr/io.h"
+                            from="Arduino/avr/io.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/avr/pgmspace.h"
+                            from="Arduino/avr/pgmspace.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/Arduino.h"
+                            from="Arduino/Arduino.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/Wire.h"
+                            from="Arduino/Wire.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/I2Cdev.h"
+                            from="I2Cdev/I2Cdev.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/AD7746.h"
+                            from="AD7746/AD7746.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/ADS1115.h"
+                            from="ADS1115/ADS1115.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/ADXL345.h"
+                            from="ADXL345/ADXL345.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/AK8963.h"
+                            from="AK8963/AK8963.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/AK8975.h"
+                            from="AK8975/AK8975.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/BMA150.h"
+                            from="BMA150/BMA150.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/BMP085.h"
+                            from="BMP085/BMP085.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/DS1307.h"
+                            from="DS1307/DS1307.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/HMC5843.h"
+                            from="HMC5843/HMC5843.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/HMC5883L.h"
+                            from="HMC5883L/HMC5883L.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/HTU21D.h"
+                            from="HTU21D/HTU21D.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/IAQ2000.h"
+                            from="IAQ2000/IAQ2000.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/ITG3200.h"
+                            from="ITG3200/ITG3200.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/L3G4200D.h"
+                            from="L3G4200D/L3G4200D.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/L3GD20H.h"
+                            from="L3GD20H/L3GD20H.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/LM73.h"
+                            from="LM73/LM73.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/LSM303DLHC.h"
+                            from="LSM303DLHC/LSM303DLHC.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/MPR121.h"
+                            from="MPR121/MPR121.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/MPU6050.h"
+                            from="MPU6050/MPU6050.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/MPU9150.h"
+                            from="MPU9150/MPU9150.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/MS5803.h"
+                            from="MS5803/MS5803.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/SSD1308.h"
+                            from="SSD1308/SSD1308.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/TCA6424A.h"
+                            from="TCA6424A/TCA6424A.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+        <packInfoList>
+          <packInfoListElem name="Package" value="i2cdevlib" mandatory="true"/>
+          <packInfoListElem name="Version" value="1.0.1" mandatory="true"/>
+          <packInfoListElem name="Architecture" value="armhf" mandatory="false"/>
+          <packInfoListElem name="Maintainer" value="Thinh Pham" mandatory="false"/>
+          <packInfoListElem name="Description"
+                            value="Unofficial i2cdevlib running on Raspberry Pi devices."
+                            mandatory="false"/>
+          <packInfoListElem name="Depends" value="wiringPi" mandatory="false"/>
+        </packInfoList>
+      </packaging>
+      <item path="AD7746/AD7746.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AD7746/AD7746.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ADS1115/ADS1115.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ADS1115/ADS1115.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ADXL345/ADXL345.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ADXL345/ADXL345.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AK8963/AK8963.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AK8963/AK8963.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AK8975/AK8975.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AK8975/AK8975.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/Arduino.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/Wire.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Arduino/Wire.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BMA150/BMA150.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BMA150/BMA150.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BMP085/BMP085.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BMP085/BMP085.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DS1307/DS1307.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DS1307/DS1307.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HMC5843/HMC5843.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HMC5843/HMC5843.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HMC5883L/HMC5883L.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HMC5883L/HMC5883L.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HTU21D/HTU21D.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HTU21D/HTU21D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IAQ2000/IAQ2000.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="IAQ2000/IAQ2000.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ITG3200/ITG3200.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ITG3200/ITG3200.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="L3G4200D/L3G4200D.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="L3G4200D/L3G4200D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="L3GD20H/L3GD20H.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="L3GD20H/L3GD20H.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LM73/LM73.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LM73/LM73.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LSM303DLHC/LSM303DLHC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LSM303DLHC/LSM303DLHC.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPR121/MPR121.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MPR121/MPR121.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU6050/MPU6050.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MPU6050/MPU6050.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MPU9150/MPU9150.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MPU9150/MPU9150.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MS5803/MS5803.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MS5803/MS5803.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SSD1308/SSD1308.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SSD1308/SSD1308.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TCA6424A/TCA6424A.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TCA6424A/TCA6424A.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
