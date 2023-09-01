@@ -21,11 +21,11 @@ Copyright 2019 Thinh Pham (i2cdevlib-pi).
 
 ### Install Dependencies
 
-The `i2cdevlib-pi` library requires `wiringPi` library as it dependency:
+Since `wiringPi` library is no longer supported by original author, we need install manually from alternative source:
 ```
-$ sudo apt-get update
-
-$ sudo apt-get install wiringpi -y
+$ git clone https://github.com/WiringPi/WiringPi.git
+$ cd WiringPi/WiringPi
+$ sudo make Install
 ```
 
 Some of visual demos require `freeglut3-dev` to be installed in order to compile (optional):
