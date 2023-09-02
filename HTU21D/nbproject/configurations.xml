@@ -12,27 +12,12 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="Arduino" displayName="Arduino" projectFiles="true">
-        <logicalFolder name="avr" displayName="avr" projectFiles="true">
-          <itemPath>../Arduino/avr/dtostrf.c</itemPath>
-          <itemPath>../Arduino/avr/dtostrf.h</itemPath>
-          <itemPath>../Arduino/avr/pgmspace.h</itemPath>
-        </logicalFolder>
-        <itemPath>../Arduino/Arduino.cpp</itemPath>
-        <itemPath>../Arduino/Arduino.h</itemPath>
-        <itemPath>../Arduino/Wire.cpp</itemPath>
-        <itemPath>../Arduino/Wire.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="examples" displayName="examples" projectFiles="true">
         <logicalFolder name="HTU21D_simple"
                        displayName="HTU21D_simple"
                        projectFiles="true">
           <itemPath>examples/HTU21D_simple/HTU21D_simple.ino</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="I2Cdev" displayName="I2Cdev" projectFiles="true">
-        <itemPath>../I2Cdev/I2Cdev.cpp</itemPath>
-        <itemPath>../I2Cdev/I2Cdev.h</itemPath>
       </logicalFolder>
       <itemPath>HTU21D.cpp</itemPath>
       <itemPath>HTU21D.h</itemPath>
@@ -50,11 +35,6 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>examples</Elem>
-    <Elem>../Arduino</Elem>
-    <Elem>../I2Cdev</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="simple" type="1">
@@ -70,12 +50,10 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
-            <pElem>../Arduino</pElem>
-            <pElem>../I2Cdev</pElem>
             <pElem>.</pElem>
           </incDir>
           <incFile>
-            <pElem>../Arduino/Arduino.h</pElem>
+            <pElem>Arduino.h</pElem>
           </incFile>
           <preprocessorList>
             <Elem>DEMO_SIMPLE</Elem>
@@ -89,27 +67,9 @@
         </asmTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}</output>
-          <commandLine>-pthread -lwiringPi</commandLine>
+          <commandLine>-pthread -li2cdev</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="HTU21D.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="HTU21D.h" ex="false" tool="3" flavor2="0">

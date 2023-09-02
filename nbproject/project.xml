@@ -9,33 +9,7 @@
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList>
-                <sourceRootElem>AD7746</sourceRootElem>
-                <sourceRootElem>ADS1115</sourceRootElem>
-                <sourceRootElem>ADXL345</sourceRootElem>
-                <sourceRootElem>AK8963</sourceRootElem>
-                <sourceRootElem>AK8975</sourceRootElem>
-                <sourceRootElem>Arduino</sourceRootElem>
-                <sourceRootElem>BMA150</sourceRootElem>
-                <sourceRootElem>BMP085</sourceRootElem>
-                <sourceRootElem>DS1307</sourceRootElem>
-                <sourceRootElem>HMC5843</sourceRootElem>
-                <sourceRootElem>HMC5883L</sourceRootElem>
-                <sourceRootElem>HTU21D</sourceRootElem>
-                <sourceRootElem>I2Cdev</sourceRootElem>
-                <sourceRootElem>IAQ2000</sourceRootElem>
-                <sourceRootElem>ITG3200</sourceRootElem>
-                <sourceRootElem>L3G4200D</sourceRootElem>
-                <sourceRootElem>L3GD20H</sourceRootElem>
-                <sourceRootElem>LM73</sourceRootElem>
-                <sourceRootElem>LSM303DLHC</sourceRootElem>
-                <sourceRootElem>MPR121</sourceRootElem>
-                <sourceRootElem>MPU6050</sourceRootElem>
-                <sourceRootElem>MPU9150</sourceRootElem>
-                <sourceRootElem>MS5803</sourceRootElem>
-                <sourceRootElem>SSD1308</sourceRootElem>
-                <sourceRootElem>TCA6424A</sourceRootElem>
-            </sourceRootList>
+            <sourceRootList/>
             <confList>
                 <confElem>
                     <name>Release</name>

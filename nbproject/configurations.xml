@@ -39,6 +39,15 @@
           <itemPath>Arduino/avr/io.h</itemPath>
           <itemPath>Arduino/avr/pgmspace.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="f1" displayName="wiringPi" projectFiles="true">
+          <itemPath>Arduino/wiringPi/piHiPri.c</itemPath>
+          <itemPath>Arduino/wiringPi/softPwm.c</itemPath>
+          <itemPath>Arduino/wiringPi/softPwm.h</itemPath>
+          <itemPath>Arduino/wiringPi/softTone.c</itemPath>
+          <itemPath>Arduino/wiringPi/softTone.h</itemPath>
+          <itemPath>Arduino/wiringPi/wiringPi.c</itemPath>
+          <itemPath>Arduino/wiringPi/wiringPi.h</itemPath>
+        </logicalFolder>
         <itemPath>Arduino/Arduino.cpp</itemPath>
         <itemPath>Arduino/Arduino.h</itemPath>
         <itemPath>Arduino/Wire.cpp</itemPath>
@@ -133,33 +142,6 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>AD7746</Elem>
-    <Elem>ADS1115</Elem>
-    <Elem>ADXL345</Elem>
-    <Elem>AK8963</Elem>
-    <Elem>AK8975</Elem>
-    <Elem>Arduino</Elem>
-    <Elem>BMA150</Elem>
-    <Elem>BMP085</Elem>
-    <Elem>DS1307</Elem>
-    <Elem>HMC5843</Elem>
-    <Elem>HMC5883L</Elem>
-    <Elem>HTU21D</Elem>
-    <Elem>I2Cdev</Elem>
-    <Elem>IAQ2000</Elem>
-    <Elem>ITG3200</Elem>
-    <Elem>L3G4200D</Elem>
-    <Elem>L3GD20H</Elem>
-    <Elem>LM73</Elem>
-    <Elem>LSM303DLHC</Elem>
-    <Elem>MPR121</Elem>
-    <Elem>MPU6050</Elem>
-    <Elem>MPU9150</Elem>
-    <Elem>MS5803</Elem>
-    <Elem>SSD1308</Elem>
-    <Elem>TCA6424A</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Release" type="2">
@@ -190,7 +172,7 @@
         </asmTool>
         <linkerTool>
           <output>${CND_DISTDIR}/libi2cdev.${CND_DLIB_EXT}</output>
-          <commandLine>-pthread -lwiringPi</commandLine>
+          <commandLine>-pthread -lcrypt</commandLine>
         </linkerTool>
       </compileType>
       <packaging>
@@ -407,6 +389,18 @@
                             perm="644"
                             owner="root"
                             group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
         </packFileList>
         <packInfoList>
           <packInfoListElem name="Package" value="i2cdevlib" mandatory="true"/>
@@ -454,6 +448,20 @@
       <item path="Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/wiringPi/piHiPri.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arduino/wiringPi/softPwm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arduino/wiringPi/softPwm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/wiringPi/softTone.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arduino/wiringPi/softTone.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arduino/wiringPi/wiringPi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arduino/wiringPi/wiringPi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="BMA150/BMA150.cpp" ex="false" tool="1" flavor2="0">
       </item>

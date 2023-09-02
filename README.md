@@ -13,42 +13,30 @@ All contribution of coding or testing devices are welcome.
 
 This project inherits [The MIT license](LICENSE) from original project.
 
-Copyright 2012 Jeff Rowberg (i2cdevlib).
-
-Copyright 2019 Thinh Pham (i2cdevlib-pi).
+  * Copyright 2012 Gordon Henderson (wiringPi)
+  * Copyright 2012 Jeff Rowberg (i2cdevlib)
+  * Copyright 2019 Thinh Pham (i2cdevlib-pi)
 
 ## Installation
 
 ### Install Dependencies
 
-The `i2cdevlib-pi` library requires `wiringPi` library as it dependency:
-```
-$ sudo apt-get update
-
-$ sudo apt-get install wiringpi -y
-```
-
 Some of visual demos require `freeglut3-dev` to be installed in order to compile (optional):
 ```
-$ sudo apt-get install freeglut3-dev -y
+$ sudo apt update && sudo apt upgrade -y
+
+$ sudo apt install freeglut3-dev -y
 ```
 
-### Install from Package (Recommended)
+### Install from Source (Recommended)
 
-Install from debian package is highly recommended:
-```
-$ wget https://raw.githubusercontent.com/mrlordkaj/i2cdevlib-pi/master/docs/i2cdevlib.deb
-
-$ sudo dpkg -i i2cdevlib.deb
-```
-
-### Install from Source (Alternative)
-
-You can also compile and install from source manually:
+For now as project is under testing, I recommend you to compile and install from source manually:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
 $ cd i2cdevlib-pi
+
+$ make
 
 $ sudo make install
 ```

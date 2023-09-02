@@ -4,16 +4,12 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>BMA150</name>
-            <c-extensions>c</c-extensions>
+            <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h,ino</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList>
-                <sourceRootElem>examples</sourceRootElem>
-                <sourceRootElem>../Arduino</sourceRootElem>
-                <sourceRootElem>../I2Cdev</sourceRootElem>
-            </sourceRootList>
+            <sourceRootList/>
             <confList>
                 <confElem>
                     <name>raw</name>

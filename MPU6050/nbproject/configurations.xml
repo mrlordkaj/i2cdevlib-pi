@@ -12,18 +12,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="Arduino" displayName="Arduino" projectFiles="true">
-        <logicalFolder name="avr" displayName="avr" projectFiles="true">
-          <itemPath>../Arduino/avr/dtostrf.c</itemPath>
-          <itemPath>../Arduino/avr/dtostrf.h</itemPath>
-          <itemPath>../Arduino/avr/io.h</itemPath>
-          <itemPath>../Arduino/avr/pgmspace.h</itemPath>
-        </logicalFolder>
-        <itemPath>../Arduino/Arduino.cpp</itemPath>
-        <itemPath>../Arduino/Arduino.h</itemPath>
-        <itemPath>../Arduino/Wire.cpp</itemPath>
-        <itemPath>../Arduino/Wire.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="examples" displayName="examples" projectFiles="true">
         <logicalFolder name="IMU_Zero" displayName="IMU_Zero" projectFiles="true">
           <itemPath>examples/IMU_Zero/IMU_Zero.ino</itemPath>
@@ -52,10 +40,6 @@
           <itemPath>examples/MPU6050_raw/MPU6050_raw.ino</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="I2Cdev" displayName="I2Cdev" projectFiles="true">
-        <itemPath>../I2Cdev/I2Cdev.cpp</itemPath>
-        <itemPath>../I2Cdev/I2Cdev.h</itemPath>
-      </logicalFolder>
       <itemPath>MPU6050.cpp</itemPath>
       <itemPath>MPU6050.h</itemPath>
       <itemPath>MPU6050_6Axis_MotionApps20.h</itemPath>
@@ -78,11 +62,6 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>examples</Elem>
-    <Elem>../Arduino</Elem>
-    <Elem>../I2Cdev</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="raw" type="1">
@@ -98,12 +77,10 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
-            <pElem>../Arduino</pElem>
-            <pElem>../I2Cdev</pElem>
             <pElem>.</pElem>
           </incDir>
           <incFile>
-            <pElem>../Arduino/Arduino.h</pElem>
+            <pElem>Arduino.h</pElem>
           </incFile>
           <preprocessorList>
             <Elem>DEMO_RAW</Elem>
@@ -117,29 +94,9 @@
         </asmTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}</output>
-          <commandLine>-pthread -lwiringPi</commandLine>
+          <commandLine>-pthread -li2cdev</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="MPU6050.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MPU6050.h" ex="false" tool="3" flavor2="0">
@@ -199,12 +156,10 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
-            <pElem>../Arduino</pElem>
-            <pElem>../I2Cdev</pElem>
             <pElem>.</pElem>
           </incDir>
           <incFile>
-            <pElem>../Arduino/Arduino.h</pElem>
+            <pElem>Arduino.h</pElem>
           </incFile>
           <preprocessorList>
             <Elem>DEMO_DMP6</Elem>
@@ -218,29 +173,9 @@
         </asmTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}</output>
-          <commandLine>-pthread -lwiringPi</commandLine>
+          <commandLine>-pthread -li2cdev</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="9">
-      </item>
-      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="9">
-      </item>
-      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="9">
-      </item>
-      <item path="../Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="9">
-      </item>
-      <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="MPU6050.cpp" ex="false" tool="1" flavor2="9">
       </item>
       <item path="MPU6050.h" ex="false" tool="3" flavor2="0">
@@ -300,12 +235,10 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
-            <pElem>../Arduino</pElem>
-            <pElem>../I2Cdev</pElem>
             <pElem>.</pElem>
           </incDir>
           <incFile>
-            <pElem>../Arduino/Arduino.h</pElem>
+            <pElem>Arduino.h</pElem>
           </incFile>
           <preprocessorList>
             <Elem>DEMO_TEAPOT</Elem>
@@ -319,29 +252,9 @@
         </asmTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}</output>
-          <commandLine>-pthread -lwiringPi -lGL -lglut -lGLU</commandLine>
+          <commandLine>-pthread -li2cdev -lGL -lglut -lGLU</commandLine>
         </linkerTool>
       </compileType>
-      <item path="../Arduino/Arduino.cpp" ex="false" tool="1" flavor2="9">
-      </item>
-      <item path="../Arduino/Arduino.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/Wire.cpp" ex="false" tool="1" flavor2="9">
-      </item>
-      <item path="../Arduino/Wire.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/dtostrf.c" ex="false" tool="0" flavor2="9">
-      </item>
-      <item path="../Arduino/avr/dtostrf.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/io.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../Arduino/avr/pgmspace.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../I2Cdev/I2Cdev.cpp" ex="false" tool="1" flavor2="9">
-      </item>
-      <item path="../I2Cdev/I2Cdev.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="MPU6050.cpp" ex="false" tool="1" flavor2="9">
       </item>
       <item path="MPU6050.h" ex="false" tool="3" flavor2="0">

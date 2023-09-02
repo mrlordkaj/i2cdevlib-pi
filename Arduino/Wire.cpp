@@ -25,8 +25,8 @@
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <linux/i2c-dev.h>
-#include <wiringPi.h>
 #include <unistd.h>
+#include "wiringPi/wiringPi.h"
 #include "Wire.h"
 
 TwoWire Wire;

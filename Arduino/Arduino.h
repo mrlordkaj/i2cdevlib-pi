@@ -29,11 +29,11 @@
 #ifndef ARDUINO_H
 #define ARDUINO_H
 
-#include <wiringPi.h>
 #include <inttypes.h>
 #include <cmath>
 #include <thread>
 #include <bitset>
+#include "wiringPi/wiringPi.h"
 #include "avr/pgmspace.h"
 #include "avr/dtostrf.h"
 #include "avr/io.h"
