@@ -29,11 +29,11 @@
 #ifndef ARDUINO_H
 #define ARDUINO_H
 
-#include <wiringPi.h>
 #include <inttypes.h>
 #include <cmath>
 #include <thread>
 #include <bitset>
+#include "wiringPi/wiringPi.h"
 #include "avr/pgmspace.h"
 #include "avr/dtostrf.h"
 #include "avr/io.h"
@@ -46,6 +46,8 @@
 // ================================================================
 
 #define ARDUINO 10812 // 1.8.12
+
+int getArduino();
 
 #define HEX 16
 #define DEC 10
@@ -89,7 +91,6 @@ long map(long x, long in_min, long in_max, long out_min, long out_max);
 int digitalPinToInterrupt(int pin);
 
 void attachInterrupt(int pin, void (*isr)(void), int mode);
-
 
 // ================================================================
 // ===                ARDUINO SERIAL SIMULATION                 ===

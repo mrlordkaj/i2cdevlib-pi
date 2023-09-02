@@ -37,19 +37,19 @@ ALLCONFS=Release
 # build
 .build-impl: .build-pre .validate-impl .depcheck-impl
 	@#echo "=> Running $@... Configuration=$(CONF)"
-	"${MAKE}" -f nbproject/Makefile-${CONF}.mk QMAKE=${QMAKE} SUBPROJECTS=${SUBPROJECTS} .build-conf
+	@"${MAKE}" -f nbproject/Makefile-${CONF}.mk QMAKE=${QMAKE} SUBPROJECTS=${SUBPROJECTS} .build-conf
 
 
 # clean
 .clean-impl: .clean-pre .validate-impl .depcheck-impl
 	@#echo "=> Running $@... Configuration=$(CONF)"
-	"${MAKE}" -f nbproject/Makefile-${CONF}.mk QMAKE=${QMAKE} SUBPROJECTS=${SUBPROJECTS} .clean-conf
+	@"${MAKE}" -f nbproject/Makefile-${CONF}.mk QMAKE=${QMAKE} SUBPROJECTS=${SUBPROJECTS} .clean-conf
 
 
 # clobber 
 .clobber-impl: .clobber-pre .depcheck-impl
 	@#echo "=> Running $@..."
-	for CONF in ${ALLCONFS}; \
+	@for CONF in ${ALLCONFS}; \
 	do \
 	    "${MAKE}" -f nbproject/Makefile-$${CONF}.mk QMAKE=${QMAKE} SUBPROJECTS=${SUBPROJECTS} .clean-conf; \
 	done
@@ -57,7 +57,7 @@ ALLCONFS=Release
 # all 
 .all-impl: .all-pre .depcheck-impl
 	@#echo "=> Running $@..."
-	for CONF in ${ALLCONFS}; \
+	@for CONF in ${ALLCONFS}; \
 	do \
 	    "${MAKE}" -f nbproject/Makefile-$${CONF}.mk QMAKE=${QMAKE} SUBPROJECTS=${SUBPROJECTS} .build-conf; \
 	done
@@ -65,12 +65,12 @@ ALLCONFS=Release
 # build tests
 .build-tests-impl: .build-impl .build-tests-pre
 	@#echo "=> Running $@... Configuration=$(CONF)"
-	"${MAKE}" -f nbproject/Makefile-${CONF}.mk SUBPROJECTS=${SUBPROJECTS} .build-tests-conf
+	@"${MAKE}" -f nbproject/Makefile-${CONF}.mk SUBPROJECTS=${SUBPROJECTS} .build-tests-conf
 
 # run tests
 .test-impl: .build-tests-impl .test-pre
 	@#echo "=> Running $@... Configuration=$(CONF)"
-	"${MAKE}" -f nbproject/Makefile-${CONF}.mk SUBPROJECTS=${SUBPROJECTS} .test-conf
+	@"${MAKE}" -f nbproject/Makefile-${CONF}.mk SUBPROJECTS=${SUBPROJECTS} .test-conf
 
 # dependency checking support
 .depcheck-impl:

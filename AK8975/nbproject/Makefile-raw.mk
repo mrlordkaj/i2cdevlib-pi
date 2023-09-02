@@ -35,10 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/d28afab9/Arduino.o \
-	${OBJECTDIR}/_ext/d28afab9/Wire.o \
-	${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o \
-	${OBJECTDIR}/_ext/847938aa/I2Cdev.o \
 	${OBJECTDIR}/_ext/12601b98/MPU6050.o \
 	${OBJECTDIR}/AK8975.o \
 	${OBJECTDIR}/main.o
@@ -66,42 +62,22 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF} ${OBJECTFILES} ${LDLIBSOPTIONS} -pthread -lwiringPi
-
-${OBJECTDIR}/_ext/d28afab9/Arduino.o: ../Arduino/Arduino.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Arduino.o ../Arduino/Arduino.cpp
-
-${OBJECTDIR}/_ext/d28afab9/Wire.o: ../Arduino/Wire.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/d28afab9
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d28afab9/Wire.o ../Arduino/Wire.cpp
-
-${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o: ../Arduino/avr/dtostrf.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/4ac3ce87
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/4ac3ce87/dtostrf.o ../Arduino/avr/dtostrf.c
-
-${OBJECTDIR}/_ext/847938aa/I2Cdev.o: ../I2Cdev/I2Cdev.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/847938aa
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/847938aa/I2Cdev.o ../I2Cdev/I2Cdev.cpp
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF} ${OBJECTFILES} ${LDLIBSOPTIONS} -pthread -li2cdev
 
 ${OBJECTDIR}/_ext/12601b98/MPU6050.o: ../MPU6050/MPU6050.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/12601b98
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/12601b98/MPU6050.o ../MPU6050/MPU6050.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I. -include Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/12601b98/MPU6050.o ../MPU6050/MPU6050.cpp
 
 ${OBJECTDIR}/AK8975.o: AK8975.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AK8975.o AK8975.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I. -include Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AK8975.o AK8975.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -DDEMO_RAW -I../Arduino -I../I2Cdev -I. -include ../Arduino/Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -DDEMO_RAW -I. -include Arduino.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
