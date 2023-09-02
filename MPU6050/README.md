@@ -44,16 +44,21 @@ $ g++ mpu_raw.cpp -o mpu_raw -li2cdev
 $ ./mpu_raw
 ```
 
-## Build Demos
+## Build Teapot Demo
 
-This module comes with 3 built-in demos `raw`, `dmp6`, and `teapot`. Make sure you are working on `MPU6050` directory, then run build commands:
+The `teapot` demo requires `freeglut3-dev` to be installed:
 ```
-$ make CONF=raw
+$ sudo apt update && sudo apt upgrade -y
 
-$ make CONF=dmp6
+$ sudo apt install freeglut3-dev -y
+```
 
+Make sure you are working on `i2cdevlib-pi/MPU6050` directory, compile the code:
+```
 $ make CONF=teapot
 ```
-NOTE: `teapot` demo requires `freeglut3-dev` to be installed.
 
-After `make` processes done, executable demos will available in `MPU6050/dist` directory.
+Run the application:
+```
+$ ./dist/teapot
+```

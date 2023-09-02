@@ -19,18 +19,7 @@ This project inherits [The MIT license](LICENSE) from original project.
 
 ## Installation
 
-### Install Dependencies
-
-Some of visual demos require `freeglut3-dev` to be installed in order to compile (optional):
-```
-$ sudo apt update && sudo apt upgrade -y
-
-$ sudo apt install freeglut3-dev -y
-```
-
-### Install from Source (Recommended)
-
-For now as project is under testing, I recommend you to compile and install from source manually:
+For now as project is under reforging, I recommend you to compile and install from source manually:
 ```
 $ git clone https://github.com/mrlordkaj/i2cdevlib-pi.git
 
