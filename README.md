@@ -34,14 +34,16 @@ $ sudo make install
 
 ### Wiring Device
 
-Type `pinout` in terminal or go to website [pinout.xyz](https://pinout.xyz/pinout/i2c) to see the pinout map of your Raspberry Pi. Then follow the wiring diagram bellow:
+![I2C Pinout](docs/rpi-i2c.jpg)
+
+Basic wiring for I2C devices:
 
 | Raspberry Pi | I2C Device |
 | --- | --- |
 | 3V3 | VCC |
 | GND | GND |
-| GPIO3 | SCL |
-| GPIO2 | SDA |
+| Clock | SCL |
+| Data | SDA |
 
 ### Linking Library
 
@@ -65,8 +67,6 @@ Compiled program will print out string `Arduino 10812` to your terminal:
 ```
 $ ./hello
 ```
-
-If everything is correct, you can try to continue with [MPU6050](MPU6050) guide then.
 
 ## Build Demos
 
