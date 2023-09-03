@@ -87,8 +87,8 @@ install: .install-pre .build-post
 	@ echo "[Installing i2cdevlib...]"
 	@ install -m 0755 -d ${INSTALL_DIR}/include
 	@ install -m 0644 Arduino/*.h ${INSTALL_DIR}/include
-	@ install -m 0644 Arduino/wiringPi/wiringPi.h ${INSTALL_DIR}/include/wiringPi
 	@ install -m 0755 -d ${INSTALL_DIR}/include/wiringPi
+	@ install -m 0644 Arduino/wiringPi/wiringPi.h ${INSTALL_DIR}/include/wiringPi
 	@ install -m 0755 -d ${INSTALL_DIR}/include/avr
 	@ install -m 0644 Arduino/avr/*.h ${INSTALL_DIR}/include/avr
 	@ install -m 0644 I2Cdev/I2Cdev.h ${INSTALL_DIR}/include
